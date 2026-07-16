@@ -3,7 +3,7 @@
 int main(int j, char *argv[])
 {
     int     i;
-    
+
     i = 0;
     char *s = argv[1];
 
@@ -20,6 +20,7 @@ int main(int j, char *argv[])
         }
         i++;
     }
+}
     // while (&s[i] && &s[i] != '\0')
     // {
     //     i++;
@@ -32,4 +33,3 @@ int main(int j, char *argv[])
     //         write(1,&c[i],1);
     //     }
     // }
-}

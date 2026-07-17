@@ -1,18 +1,37 @@
-#include <unistd.h>
+#include <stdlib.h>
 
-int     *ft_range(int start, int end)
+int *ft_range(int start, int end)
 {
-    int     temp;
-    temp = start;
+    int *res;
+    int size;
+    int i;
+    int step;
 
-    int     array[] = {0};
+    // Calculate the total number of elements required
+    if (start <= end)
+        size = end - start + 1;
+    else
+        size = start - end + 1;
 
-    int i = 0;
+    // Allocate memory
+    res = (int *)malloc(sizeof(int) * size);
+    if (!res)
+        return (NULL);
 
-    while (start <= end)
+    // Determine the direction of the progression
+    if (start <= end)
+        step = 1;
+    else
+        step = -1;
+
+    // Fill the array
+    i = 0;
+    while (i < size)
     {
-        int a = malloc(start);
-        array[i] = a;
+        res[i] = start;
+        start = start + step;
         i++;
     }
+
+    return (res);
 }

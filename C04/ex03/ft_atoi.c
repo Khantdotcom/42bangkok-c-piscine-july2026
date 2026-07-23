@@ -1,54 +1,31 @@
-#include <unistd.h>
 
-void	ft_putchar(char c)
+
+int ft_atoi(char *str)
 {
-	write(1,&c,1);
-}
+    int i;
+    int sign;
+    int result;
 
-void	ft_putnbr(int	nb)
-{
-	if(nb < 0)
-	{
-		ft_putchar('-');
-		nb *= -1;
-	}
-	if((nb >= 0 ) && (nb <=9))
-	{
-		char	c;
-		c = nb + '0';
-		ft_putchar(c);
-	}else{
-		ft_putnbr(nb/10);
-		ft_putnbr(nb%10);
-	}
-}
+    i = 0;
+    sign = 1;
+    result = 0;
 
-int	ft_atoi(char *str)
-{
-	int i;
-	int count;
+    while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+    {
+        i++;
+    }
+    while (str[i] == '-' || str[i] == '+')
+    {
+        if (str[i] == '-')
+        {
+            sign = -sign; 
+        i++;
+    }}
 
-	i = 0;
-	count = 0;
-	while(str[i])
-	{
-		if(str[i] == ' ')
-		{
-			continue;
-		}
-		if((str[i] == '-') || (str[i] == '+'))
-		{
-			count++;
-		}else{
-			break;
-		}
-		i++;
-	}
-	if(count << 1 == 0){
-		write(1,"-",1);
-	}
-	while(str[i])
-	{
-
-	}
+    while (str[i] >= '0' && str[i] <= '9')
+    {
+        result = (result * 10) + (str[i] - '0');
+        i++;
+    }
+    return (result * sign);
 }

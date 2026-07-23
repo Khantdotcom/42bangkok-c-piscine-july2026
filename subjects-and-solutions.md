@@ -1,0 +1,6018 @@
+# Past-42 full contents dump
+
+## C00
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C00/README.md
+
+```markdown
+# C 00
+
+In this project we will learn the basic structure of programs and functions in **C**. We will learn how to use the different types of variables, repetition structures, If statements and how to work with the 'Write' function. We will also learn the basics about the characters of the ASCII table. All exercises are commented for a better understanding.
+
+
+## Useful links:
+In this links bellow you can find videos that can help you to better understand some concepts covered in this project.
+<br>
+
+* **Variables:** https://www.youtube.com/watch?v=ghCbURMWBD8&t=14s
+
+* **While:** https://www.youtube.com/watch?v=v-K-4KuA8mQ
+
+* **If statements:** https://www.youtube.com/watch?v=HQ3dCWjfRZ4
+
+* **ASCII table:** https://www.youtube.com/watch?v=zB85kTs-sEw
+
+* **Recursive function:** https://www.youtube.com/watch?v=rf60MejMz3E
+<br>
+
+**NOTE:** These videos don't have the resolution of the exercises.
+
+## Final grade: 100% :heavy_check_mark:
+All exercises have passed correct through Moulinette.
+
+| Project | Validation |
+|:----:|:------------------:|
+| ex00 | :heavy_check_mark: |
+| ex01 | :heavy_check_mark: |
+| ex02 | :heavy_check_mark: |
+| ex03 | :heavy_check_mark: |
+| ex04 | :heavy_check_mark: |
+| ex05 | :heavy_check_mark: |
+| ex06 | :heavy_check_mark: |
+| ex07 | :heavy_check_mark: |
+| ex08 | :heavy_check_mark: |
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C00/ex00/ft_putchar.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/02 10:47:06 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/03 19:44:13 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+//print the char received as parameter
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+ 
+int	main(void)
+{
+	ft_putchar('a');
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C00/ex01/ft_print_alphabet.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/02 18:57:22 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/03 19:45:23 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_print_alphabet(void)
+{
+	char	letter;
+
+	letter = 'a';
+
+	//while letter is less than or equal to z
+	while (letter <= 'z')
+	{
+		//print letter
+		write(1, &letter, 1);
+
+		//go to next letter
+		letter++;
+	}
+}
+/* int	main(void)
+{
+	ft_print_alphabet();
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C00/ex02/ft_print_reverse_alphabet.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/02 20:00:28 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/03 19:46:10 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+//Imprime as letras de 'z' a 'a'
+void	ft_print_reverse_alphabet(void)
+{
+	char	letter;
+
+	letter = 'z';
+
+	//while letter is more than or equal to 'a'
+	while (letter >= 'a')
+	{
+		//print letter
+		write(1, &letter, 1);
+
+		//go to previous letter
+		letter--;
+	}
+}
+/* int	main(void)
+{
+	ft_print_reverse_alphabet();
+} */
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C00/ex03/ft_print_numbers.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorre-@student.42porto.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/03 09:41:43 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/05 16:00:14 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_print_numbers(void)
+{
+	char	number;
+
+	number = '0';
+
+	//while number is less than or equal '9'
+	while (number <= '9')
+	{
+		//print number
+		write(1, &number, 1);
+
+		//go to next number
+		number++;
+	}
+}
+/* 
+int	main(void)
+{
+	ft_print_numbers();
+} */
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C00/ex04/ft_is_negative.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/03 10:41:37 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/05 16:01:54 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+// #include <stdio.h>
+
+//check if number received as parameter is negative or positive
+void	ft_is_negative(int n)
+{
+	if (n >= 0)
+	{
+		write(1, "P", 1);
+	}
+	else
+	{
+		write(1, "N", 1);
+	}	
+}
+/* 
+int	main(void)
+{
+	ft_is_negative(42);
+	printf("\n");
+	ft_is_negative(0);
+	printf("\n");
+	ft_is_negative(-42);
+	printf("\n");
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C00/ex05/ft_print_comb.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/03 12:15:33 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/04 10:56:01 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_print(char fst, char snd, char trd)
+{
+	write(1, &fst, 1);
+	write(1, &snd, 1);
+	write(1, &trd, 1);
+
+	//If not the numbers 789 the comma is printed
+	if (!(fst == '7' && snd == '8' && trd == '9'))
+		write(1, ", ", 2);
+}
+
+void	ft_print_comb(void)
+{
+	char	fst;
+	char	snd;
+	char	trd;
+
+	// The numbers won't be repeated because
+	// they are the sum of the previous plus one
+	fst = '0';
+	while (fst <= '7')
+	{
+		snd = fst + 1;
+		while (snd <= '8')
+		{
+			trd = snd + 1;
+			while (trd <= '9')
+			{	
+				//Send the numbers to be printed
+				ft_print(fst, snd, trd);
+				trd++;
+			}
+			snd++;
+		}
+		fst++;
+	}
+}
+/* 
+int	main(void)
+{
+	ft_print_comb();
+} */
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C00/ex06/ft_print_comb2.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/04 10:57:36 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/05 16:12:18 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_print_comb2(void)
+{
+	int	i;
+	int	j;
+
+	// The numbers won't be repeated because
+	// j is the sum of i plus one
+	i = 0;
+	while (i <= 99)
+	{
+		j = i + 1;
+		while (j <= 99)
+		{
+			// The division and module of each number allows you to separate them by digit
+			// '0' converts the number to ASCII table. Change from int to char.
+			ft_putchar(i / 10 + '0');
+			ft_putchar(i % 10 + '0');
+			ft_putchar(' ');
+			ft_putchar(j / 10 + '0');
+			ft_putchar(j % 10 + '0');
+
+			//If not the numbers 98 and 99 the comma is printed
+			if (!(i == 98 && j == 99))
+				write(1, ", ", 2);
+			j++;
+		}
+		i++;
+	}
+}
+/* 
+int	main(void)
+{
+	ft_print_comb2();
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C00/ex07/ft_putnbr.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/04 16:34:31 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/21 09:41:12 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+
+// Function to print an integer to stdout
+void	ft_putnbr(int nb)
+{
+	long int	n;
+
+	// long int 'n' receives int 'nb'
+	// to avoid the issues with the int min
+	n = nb;
+	
+	// If the 'n' is negative
+	// write a minus sign and make it positive
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n *= -1;
+	}
+
+	// If 'n' is a single digit between 0 and 9. write it.
+	// The plus '0' convert the int to char
+	if (n >= 0 && n <= 9)
+		ft_putchar(n + '0');
+
+	// If 'n' is more than one digit
+	if (n > 9)
+	{
+		// Recursively print the quotient by dividing the number by 10
+		ft_putnbr(n / 10);
+		
+		// Recursively print the remainder by computing the number modulo 10
+		ft_putnbr(n % 10);
+	}
+}
+/* 
+int	main(void)
+{
+	write(1, "Print a positive number: ", 26);
+	ft_putnbr(42);
+	write(1, "\nPrint a negative number: ", 26);
+	ft_putnbr(-42);
+	write(1, "\nPrint zero: ", 13);
+	ft_putnbr(0);
+	write(1, "\nPrint the max value of int: ", 29);
+	ft_putnbr(2147483647);
+	write(1, "\nPrint the min value of int: ", 29);
+	ft_putnbr(-2147483648);
+	write(1, "\n", 1);
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C00/ex08/ft_print_combn.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_combn.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/05 19:27:16 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/22 08:10:29 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_print_combn_recursive(int n, int start, int current, int output[])
+{
+	int	i;
+	int	j;
+
+	// If the current number is equal to the requested number
+	// The number will be printed
+	if (current == n)
+	{
+		i = 0;
+		while (i < n)
+		{
+			ft_putchar(output[i] + '0');
+			i++;
+		}
+
+		// If the number is not the last possible, the comma is printed
+		if (output[0] != 10 - n)
+		{
+			ft_putchar(',');
+			ft_putchar(' ');
+		}
+		// After printing, the code comes out of the recursive function
+		return ;
+	}
+	j = start;
+	while (j <= (10 - (n - current)))
+	{
+		// The array keeps the possible numbers of each combination
+		output[current] = j;
+		ft_print_combn_recursive(n, j + 1, current + 1, output);
+		j++;
+	}
+}
+
+void	ft_print_combn(int n)
+{
+	// This array will store the combinations
+	int	output[10];
+
+	// Combinations are only started if it's between 1 and 9
+	if (n > 0 && n < 10)
+		ft_print_combn_recursive(n, 0, 0, output);
+	else
+		return ;
+}
+/* 
+int	main(void)
+{
+	ft_print_combn(2);
+} */
+
+```
+
+## C01
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C01/README.md
+
+```markdown
+# C 01
+
+In this project we will learn how to work with pointers and arrays. All exercises are commented for a better understanding.
+
+
+## Useful links:
+In this links bellow you can find videos that can help you to better understand some concepts covered in this project.
+<br>
+
+* **Pointers:** https://www.youtube.com/watch?v=2ybLD6_2gKM
+
+* **Arrays:** https://www.youtube.com/watch?v=55l-aZ7_F24&list=PLBlnK6fEyqRjoG6aJ4FvFU1tlXbjLBiOP
+
+* **Sort array:** https://www.youtube.com/watch?v=qLVrwCvVPGo
+<br>
+
+**NOTE:** These videos don't have the resolution of the exercises.
+
+## Final grade: 100% :heavy_check_mark:
+All exercises have passed correct through Moulinette.
+
+| Project | Validation |
+|:----:|:------------------:|
+| ex00 | :heavy_check_mark: |
+| ex01 | :heavy_check_mark: |
+| ex02 | :heavy_check_mark: |
+| ex03 | :heavy_check_mark: |
+| ex04 | :heavy_check_mark: |
+| ex05 | :heavy_check_mark: |
+| ex06 | :heavy_check_mark: |
+| ex07 | :heavy_check_mark: |
+| ex08 | :heavy_check_mark: |
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C01/ex00/ft_ft.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/05 20:07:48 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/07 17:39:45 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+//#include <stdio.h>
+
+void	ft_ft(int *nbr)
+{
+	// This instruction tells the nbr pointer that the address must receive the value 42
+	// This means that the variable n called on Main will now have the value 42
+	*nbr = 42;
+}
+
+/* int	main(void)
+{
+	int n = 1;
+	int *nbr = &n;
+
+	printf("Before ft_ft: \n");
+	printf("Variable 'nbr' points to adress %p that has the value %d stored\n", &n, n);
+	printf("Pointer 'nbr' points to the same adress %p that has the value %d stored\n", nbr, *nbr);
+	ft_ft(nbr);
+	printf("\n");
+	printf("After ft_ft: \n");
+	printf("Pointer 'nbr' remains pointing to adress %p, but now that has the value %d stored\n", nbr, *nbr);
+	printf("Now 'n' has the value %d stored\n", n);
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C01/ex01/ft_ultimate_ft.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/06 13:37:46 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/07 12:21:12 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+//#include <stdio.h>
+
+void	ft_ultimate_ft(int *********nbr)
+{
+	// With this instruction all the pointers who are pointing to 
+	// the same address will now point to the value 42
+	*********nbr = 42;
+}
+/* 
+int	main(void)
+{
+	int	number = 1024;
+	int	*ptr1 = &number;
+	int	**ptr2 = &ptr1;
+ 	int	***ptr3 = &ptr2;
+ 	int	****ptr4 = &ptr3;
+	int *****ptr5 = &ptr4;
+ 	int	******ptr6 = &ptr5;
+ 	int	*******ptr7 = &ptr6;
+ 	int	********ptr8 = &ptr7;
+ 	int	*********ptr9 = &ptr8;
+
+	printf("'Number' has the adress %p and the value %d\n", &number, number);
+	printf("ptr1 points to same adress of 'Number'%p and has the same value %d\n", ptr1, *ptr1);
+	printf("ptr9 points to a different adress of 'Number'%p but the adresses are connected. It has the same value %d\n", ptr9, *********ptr9);
+	ft_ultimate_ft(ptr9);
+	printf("\n");
+	printf("After ft_ultimate_ft: \n");
+	printf("Pointer 'ptr9' remains pointing to adress %p, but now that has the value %d stored\n", ptr9, *********ptr9);
+	printf("'Number' remains pointing to adress %p, but now that has the value %d stored\n", &number, number);
+} */
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C01/ex02/ft_swap.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/06 15:41:57 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/07 09:29:53 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+//#include <stdio.h>
+
+void	ft_swap(int *a, int *b)
+{
+	int	temp;
+
+	// This instruction exchanges the values to which pointers are pointing
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+/* 
+int	main(void)
+{
+	int	v1 = 15;
+	int	v2 = 35;
+	int	*a = &v1;
+	int	*b = &v2;
+	
+	printf("Before ft_swap: \n");
+	printf("Pointer 'a' points to adress %p that has the value %d stored\n", a, *a);
+	printf("Pointer 'b' points to adress %p that has the value %d stored\n", b, *b);
+	ft_swap(a, b);
+	printf("\n");
+	printf("After ft_swap: \n");
+	printf("Pointer 'a' remains pointing to adress %p, but now that has the value %d stored\n", a, *a);
+	printf("Pointer 'b' remains pointing to adress %p, but now that has the value %d stored\n", b, *b);
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C01/ex03/ft_div_mod.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/06 17:40:42 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/07 09:28:58 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+//#include <stdio.h>
+
+void	ft_div_mod(int a, int b, int *div, int *mod)
+{
+	*div = a / b;
+	*mod = a % b;
+}
+/* 
+int	main(void)
+{
+	int a = 45;
+	int b = 5;
+	int	v1 = 0;
+	int	v2 = 0;
+	int	*div = &v1;
+	int	*mod = &v2;
+
+	printf("Before ft_div_mod: \n");
+	printf("Pointer 'div' points to adress %p that has the value %d stored\n", div, *div);
+	printf("Pointer 'mod' points to adress %p that has the value %d stored\n", mod, *mod);
+	ft_div_mod(a, b, div, mod);
+	printf("\n");
+	printf("After ft_div_mod: \n");
+	printf("Pointer 'div' remains pointing to adress %p, but now that has the value %d stored\n", div, *div);
+	printf("Pointer 'mod' remains pointing to adress %p, but now that has the value %d stored\n", mod, *mod);
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C01/ex04/ft_ultimate_div_mod.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/06 18:42:33 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/07 09:27:57 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+//#include <stdio.h>
+
+void	ft_ultimate_div_mod(int *a, int *b)
+{
+	int	div;
+	int	mod;
+
+	div = (*a / *b);
+	mod = (*a % *b);
+	*a = div;
+	*b = mod;
+}
+/* 
+int	main(void)
+{
+	int	v1 = 15;
+	int	v2 = 3;
+	int	*a = &v1;
+	int	*b = &v2;
+
+	printf("Before ft_ultimate_div_mod: \n");
+	printf("Pointer 'a' points to adress %p that has the value %d stored\n", a, *a);
+	printf("Pointer 'b' points to adress %p that has the value %d stored\n", b, *b);
+	ft_ultimate_div_mod(a, b);
+	printf("\n");
+	printf("After ft_ultimate_div_mod: \n");
+	printf("Pointer 'a' remains pointing to adress %p, but now that has the value %d stored\n", a, *a);
+	printf("Pointer 'b' remains pointing to adress %p, but now that has the value %d stored\n", b, *b);
+
+} */
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C01/ex05/ft_putstr.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/07 09:33:18 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/07 09:51:50 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+
+	// While the string doesn't reach the null
+	while (str[i])
+	{
+		// Each Char passed by the index "i" will be printed
+		write(1, &str[i], 1);
+		i++;
+	}	
+}
+/* 
+int	main(void)
+{
+	char	*str = "Print the string";
+	
+	ft_putstr(str);
+} */
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C01/ex06/ft_strlen.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/07 09:54:25 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/07 10:26:36 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+//#include <stdio.h>
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	// While the string doesn't reach the null
+	// the counter "i" will be increased
+	while (str[i] != '\0')
+		i++;
+
+	// In the end the function returns the number of characters counted
+	return (i);
+}
+/* 
+int	main(void)
+{
+	char	*str = "Hello World!";
+	int	lenght;
+	
+	lenght = ft_strlen(str);
+	printf("String: %s\nLenght: %d\n", str, lenght);
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C01/ex07/ft_rev_int_tab.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <worrea-@student.42porto.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/07 10:31:37 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/07 11:04:39 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+//#include <stdio.h>
+
+void	ft_rev_int_tab(int *tab, int size)
+{
+	int	i;
+	int	tmp;
+
+	i = 0;
+
+	// The Size Value is decreased to the table index to be in the last position
+	size--;
+	while (i < size)
+	{
+		// This instruction will exchange the value in the first position with the last
+		tmp = tab[i];
+		tab[i] = tab[size];
+		tab[size] = tmp;
+
+		//After the exchange the index goes to the second position at both ends
+		i++;
+		size--;
+	}
+}
+/* 
+int	main(void)
+{
+	int	tab[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+	int	size = 10;
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	printf("Array before: \n");
+	while (i < size)
+	{
+		printf("%d ", tab[i]);
+		i++;
+	}
+	printf("\n");
+	printf("\nArray after: \n");
+	ft_rev_int_tab(tab, size);
+	while (j < size)
+        {
+		printf("%d ", tab[j]);
+		j++;
+	}
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C01/ex08/ft_sort_int_tab.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/07 12:02:29 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/03/05 19:08:19 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+//#include <stdio.h>
+
+void	ft_sort_int_tab(int *tab, int size)
+{
+	int	i;
+	int	j;
+	int	tmp;
+
+	// Two whiles with two counters will compare each position of the array with each other
+	i = 0;
+	while (i < size)
+	{
+		j = 0;
+		while (j < size)
+		{
+			// If a larger number is found in position j, the exchange is made
+			// In the end the smaller numbers are in the beginning and the largest at the end
+			if (tab[i] <= tab[j])
+			{
+				tmp = tab[i];
+				tab[i] = tab[j];
+				tab[j] = tmp;
+			}
+			j++;
+		}
+		i++;
+	}	
+}
+/* 
+int	main(void)
+{
+	int	tab[10] = {5, 3, 2, 9, 4, 8, 0, 7, 1, 6};
+	int	size = 10;
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	printf("Array before: \n");
+	while (i < size)
+	{
+		printf("%d ", tab[i]);
+		i++;
+	}
+	printf("\n");
+	printf("\nArray after: \n");
+	ft_sort_int_tab(tab, size);
+	while (j < size)
+        {
+		printf("%d ", tab[j]);
+		j++;
+	}
+} */ 
+
+```
+
+## C02
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C02/README.md
+
+```markdown
+# C 02
+
+In this project we will practice different cases using the ASCII table characters. We will also recreate some functions that are part of the <string.h> library. All exercises are commented for a better understanding.
+
+
+## Useful links:
+In this links bellow you can find videos that can help you to better understand some concepts covered in this project.
+<br>
+
+* **String functions:** https://www.youtube.com/watch?v=XdnmsKUvGsc
+
+* **ASCII table:** https://www.youtube.com/watch?v=zB85kTs-sEw
+
+* **Hexadecimal base:** https://www.youtube.com/watch?v=QJW6qnfhC70
+<br>
+
+**NOTE:** These videos don't have the resolution of the exercises.
+
+## Final grade: 85% :heavy_check_mark:
+All exercises have passed correct through Moulinette until exercise 11. Exercise 12 was made after the Pisicne end.
+
+| Project | Validation |
+|:----:|:------------------:|
+| ex00 | :heavy_check_mark: |
+| ex01 | :heavy_check_mark: |
+| ex02 | :heavy_check_mark: |
+| ex03 | :heavy_check_mark: |
+| ex04 | :heavy_check_mark: |
+| ex05 | :heavy_check_mark: |
+| ex06 | :heavy_check_mark: |
+| ex07 | :heavy_check_mark: |
+| ex08 | :heavy_check_mark: |
+| ex09 | :heavy_check_mark: |
+| ex10 | :heavy_check_mark: |
+| ex11 | :heavy_check_mark: |
+| ex12 | :x: |
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C02/ex00/ft_strcpy.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/07 14:03:14 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/09 15:05:11 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// #include <stdio.h>
+
+// This function will copy the content from one string to another, including the null
+char	*ft_strcpy(char *dest, char *src)
+{
+	int	i;
+
+	i = 0;
+	// While 'src' doesn't reach the end
+	while (src[i] != '\0')
+	{
+		//'dest' receives the character that is in 'src'
+		dest[i] = src[i];
+		i++;
+	}
+	// In the end 'dest' receives the null of 'src'
+	dest[i] = src[i];
+
+	//'dest' is returned
+	return (dest);
+}
+/* 
+int	main(void)
+{
+	char	dest[] = "Dest";
+	char	src[] = "Source";
+
+	printf("dest before: %s\n", dest);
+	ft_strcpy(dest, src);
+	printf("dest after: %s\n", dest);
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C02/ex01/ft_strncpy.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/07 17:21:43 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/09 18:26:40 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// #include <stdio.h>
+
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
+{
+	unsigned int	i;
+
+	i = 0;
+	// while src is not over and the counter is smaller than n
+	while (src[i] != '\0' && i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+
+	// If the N is greater than dest, it's necessary to put the null in all the remaining indices
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
+}
+/*
+int	main(void)
+{
+	char	dest[] = "######";
+	char	src[] = "Source";
+	int	n = 2;
+	
+	printf("dest before: %s\n", dest);
+	ft_strncpy(dest, src, n);
+	printf("dest after: %s\n", dest);
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C02/ex02/ft_str_is_alpha.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/07 18:43:02 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/22 08:48:41 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// #include <stdio.h>
+
+int	ft_str_is_alpha(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		// If STR is not between 'a' and 'z' or between 'a' and 'z' the return is 0
+		// the exclamation point before conditions means NOT
+		if (!((str[i] >= 'a' && str[i] <= 'z')
+				|| (str[i] >= 'A' && str[i] <= 'Z')))
+			return (0);
+		i++;
+	}
+	// If there is no correspondence without alpha, the return is 1
+	return (1);
+}
+/* 
+int	main(void)
+{
+	char	*str1 = "T stndo";
+	char	*str2 = "Testndo";
+
+	printf("%s is alpha? %d\n", str1, ft_str_is_alpha(str1));	
+	printf("%s is alpha? %d\n", str2, ft_str_is_alpha(str2));	
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C02/ex03/ft_str_is_numeric.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/08 13:17:35 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/08 17:21:17 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+
+int	ft_str_is_numeric(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		// If STR is not between '0' and '9' the return is 0
+		if (!((str[i] >= '0' && str[i] <= '9')))
+			return (0);
+		i++;
+	}
+	// If there is no correspondence without numbers, the return is 1
+	return (1);
+}
+/* 
+int	main(void)
+{
+	char	*str1 = "012356789";
+	char	*str2 = "o12356789";
+
+	printf("%s is numeric? %d\n", str1, ft_str_is_numeric(str1));	
+	printf("%s is numeric? %d\n", str2, ft_str_is_numeric(str2));
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C02/ex04/ft_str_is_lowercase.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/08 13:26:51 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/08 14:39:21 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// #include <stdio.h>
+
+int	ft_str_is_lowercase(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		// If STR is not between 'a' and 'z' in lowercase the return is 0
+		if (!((str[i] >= 'a' && str[i] <= 'z')))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+/* 
+int	main(void)
+{
+	char	*str1 = "wordsandletters";
+	char	*str2 = "wordsandlEtters";
+
+	printf("%s is lowercase? %d\n", str1, ft_str_is_lowercase(str1));	
+	printf("%s is lowercase? %d\n", str2, ft_str_is_lowercase(str2));
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C02/ex05/ft_str_is_uppercase.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/08 13:34:50 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/08 14:38:09 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// #include <stdio.h>
+
+int	ft_str_is_uppercase(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		// If STR is not between 'A' and 'Z' in uppercase the return is 0
+		if (!((str[i] >= 'A' && str[i] <= 'Z')))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+/* 
+int	main(void)
+{
+	char	*str1 = "WORDSANDLETTERS";
+	char	*str2 = "WORDSANDlETTERS";
+
+	printf("%s is uppercase? %d\n", str1, ft_str_is_uppercase(str1));	
+	printf("%s is uppercase? %d\n", str2, ft_str_is_uppercase(str2));
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C02/ex06/ft_str_is_printable.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/08 14:57:03 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/08 15:05:15 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// #include <stdio.h>
+
+int	ft_str_is_printable(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		// If STR is not between 32 and 126 in the ASCII Table the return is 0
+		// The printable characters range from 32 ' ' to 126 '~'
+		if (!((str[i] >= 32 && str[i] <= 126)))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+/* 
+int	main(void)
+{
+	char	*str1 = "aB3/!'.;Ko+";
+	char	*str2 = "aB3/!'.;Ko±";
+
+	printf("%s is printable? %d\n", str1, ft_str_is_printable(str1));	
+	printf("%s is printable? %d\n", str2, ft_str_is_printable(str2));
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C02/ex07/ft_strupcase.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/08 15:17:52 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/08 17:15:55 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// #include <stdio.h>
+
+char	*ft_strupcase(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		// If STR is between 'a' and 'z' lowercase
+		if (str[i] >= 'a' && str[i] <= 'z')
+		{
+			// STR in the index position will receive itself less 32
+			// 32 It's the difference in the ASCII table between the letter lowercase and uppercase
+			str[i] = str[i] - 32;
+		}
+		i++;
+	}
+	return (str);
+}
+/* 
+int	main(void)
+{
+	char	str[] = "all is lowercase";
+
+	printf("Before: %s\n", str);
+	printf("After: %s\n", ft_strupcase(str));
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C02/ex08/ft_strlowcase.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/08 17:16:30 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/08 17:20:48 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// #include <stdio.h>
+
+char	*ft_strlowcase(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		// If STR is between 'A' and 'Z' uppercase
+		if (str[i] >= 'A' && str[i] <= 'Z')
+		{
+			// STR in the index position will receive itself more 32
+			str[i] = str[i] + 32;
+		}
+		i++;
+	}
+	return (str);
+}
+/* 
+int	main(void)
+{
+	char	str[] = "ALL IS UPPERCASE";
+
+	printf("Before: %s\n", str);
+	printf("After: %s\n", ft_strlowcase(str));
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C02/ex09/ft_strcapitalize.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/08 17:22:33 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/22 08:57:07 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+
+char	*ft_strlowcase(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
+		i++;
+	}
+	return (str);
+}
+
+char	*ft_strcapitalize(char *str)
+{
+	int		i;
+
+	// Let's call the function we created in the previous exercise
+	// Calling the Lowercase function will transform all uppercase characters into lowercase
+	ft_strlowcase(str);
+
+	// If the first character is lowercase, it will pass to uppercase
+	if (str[0] >= 'a' && str[0] <= 'z')
+		str[0] -= 32;
+	i = 1;
+	while (str[i])
+	{
+		// If the character before the current is not number or letters
+		if (!((str[i - 1] >= 'a' && str[i - 1] <= 'z')
+			|| (str[i - 1] >= 'A' && str[i - 1] <= 'Z')
+			|| (str[i - 1] >= '0' && str[i - 1] <= '9')))
+		{
+			// with the previous condition and the current character is lowercase
+			// The current character is passed to uppercase
+			if (str[i] >= 'a' && str[i] <= 'z')
+				str[i] -= 32;
+		}
+		i++;
+	}
+	return (str);
+}
+/* 
+int	main(void)
+{
+	char	str[] = "OLA, tudo BEM? 42palavras QUARENTA-e-duas; cinquenta+E+UM";
+
+	printf("Before: %s\n", str);
+	printf("After: %s\n", ft_strcapitalize(str));
+} */
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C02/ex10/ft_strlcpy.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/08 18:27:37 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/22 09:06:06 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// #include <stdio.h>
+
+unsigned int	ft_lenght(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+//This function will return the SRC Lenght
+// and will add SRC to DEST according to the past size
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+{
+	unsigned int	i;
+
+	i = 0;
+	if (size > 0)
+	{
+		// While SRC doesn't reach the end and the counter is less than size less one
+		// Size less one to be able to receive the null
+		while (src[i] != '\0' && i < size - 1)
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
+	}
+	// Returns the SRC Lenght
+	return (ft_lenght(src));
+}
+/*  
+int	main(void)
+{
+	char	src[] = "letters";
+	char	dest[11];
+	int	n = 6;
+
+	printf("src: %s\nlenght returned: %d\ndest: %s\n", src, ft_strlcpy(dest, src, n), dest);
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C02/ex11/ft_putstr_non_printable.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/09 14:44:24 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/11 17:56:28 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_xdigit(unsigned char c)
+{
+	char	*xdigit;
+
+	// Hexadecimal base
+	xdigit = "0123456789abcdef";
+
+	// the division and the module find the character corresponding
+	// to the past in the hexadecimal base and print it
+	ft_putchar(xdigit[c / 16]);
+	ft_putchar(xdigit[c % 16]);
+}
+
+void	ft_putstr_non_printable(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		// If this is less than 32 or equal to 127
+		// that means non-printable 
+		if (str[i] < ' ' || str[i] == 127)
+		{
+			// Two backslashes to be able to print 1
+			ft_putchar('\\');
+			// Call the function xdigit to transform the current character into hexadecimal
+			ft_xdigit(str[i]);
+		}
+		else
+			// If it's different from non-propriable, the character is printed
+			ft_putchar(str[i]);
+		i++;
+	}
+}
+/*  
+int	main(void)
+{
+	char *str = "Ola\nesta bem?";
+	ft_putstr_non_printable(str);
+} */
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C02/ex12/ft_print_memory.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_memory.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/27 15:21:28 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/27 15:21:41 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_putchar(char c, int size)
+{
+	int i;
+
+	i = 0;
+	while (i < size)
+	{
+		write(1, &c, 1);
+		i++;
+	}
+}
+
+void	ft_xdigit(unsigned long long nb, int check)
+{
+	char	*xdigit;
+
+	xdigit = "0123456789abcdef";
+
+	// When the number that is passed by the ft_print_data function
+	// is lower than the base, the value to be printed is '0'
+	if (nb < 16 && check == 1)
+		ft_putchar('0', 1);
+
+	// If it's larger than the base, it divides and module until it can print the number
+	if (nb >= 16)
+	{
+		ft_xdigit(nb / 16, 0);
+		ft_xdigit(nb % 16, 0);
+	}
+	else
+		ft_putchar(xdigit[nb], 1);
+}
+
+void	ft_print_addr(unsigned long long addr)
+{
+	unsigned long long	tmp;
+	int					i;
+
+	// This temporary variable is created so as not to change the value of ADDR
+	tmp = addr;
+	i = 1;
+
+	// This block serves to print the zeros at the beginning of the address
+	while (i++ < 15)
+	{
+		if (tmp < 16)
+			ft_putchar('0', 1);
+		tmp /= 16;
+	}
+	// After the zeros are printed, the rest of the address is sent for printing
+	ft_xdigit(addr, 0);
+}
+
+void	ft_print_data(unsigned char *c, int size)
+{
+	int		i;
+
+	i = -1;
+	while (i++ < 16)
+	{
+		// The space will only be printed when the counter is even
+		if (i % 2 == 0)
+			ft_putchar(' ', 1);
+		if (i < size)
+		{
+			// sends the character to position I to be converted to hexadecimal
+			ft_xdigit((unsigned long long)*(c + i), 1);
+		}
+		// When it's on the last line while 'i'
+		// is different from column 16, spaces will be printed		
+		else if (i != 16)
+			ft_putchar(' ', 2);
+	}
+	i = -1;
+
+	// This block prints the text that contains the string
+	while (i++ < size - 1)
+	{
+		// If it's a non-pritable character, a dot is printed in place
+		if (*(c + i) <= 31 || *(c + i) >= 127)
+			ft_putchar('.', 1);
+		else
+			ft_putchar(*(c + i), 1);
+	}
+}
+
+void	*ft_print_memory(void *addr, unsigned int size)
+{
+	unsigned int	i;
+	unsigned int	columns;
+
+	i = 0;
+	// make the account of how many lines will be needed
+	while (i * 16 < size)
+	{
+		// count how many columns will be needed in each line
+		// The value is less than 16 in the last line
+		if (i < size / 16)
+			columns = 16;
+		else
+			columns = size % 16;
+		
+		// This function will print the address
+		// The address is sent as long long
+		// i * 16 is the position of the string in the index that starts the line
+		ft_print_addr((unsigned long long)addr + (i * 16));
+		ft_putchar(':', 1);
+
+		// This function will print the columns and the text
+		// i * 16 is the position of the string in the index that starts the line
+		ft_print_data(addr + (i * 16), columns);
+		ft_putchar('\n', 1);
+		i++;
+	}
+	return (addr);
+}
+/* 
+int main()
+{
+	char *str = "Hello W\1rld! This is a t\2st to print th\1 memory addr\2ss";
+	int	size = 0;
+
+	while (str[size])
+		size++;
+	ft_print_memory(str, size);
+} */
+
+```
+
+## C03
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C03/README.md
+
+```markdown
+# C 03
+
+In this project we will recreate some more complex functions that are part of the <string.h> library. All exercises are commented for a better understanding.
+
+
+## Useful links:
+In this links bellow you can find videos that can help you to better understand some concepts covered in this project.
+<br>
+
+* **String functions:** https://www.youtube.com/watch?v=XdnmsKUvGsc
+
+* **Strlcat Function:** https://c-for-dummies.com/blog/?p=3896 (this isn't a video)
+<br>
+
+**NOTE:** These videos don't have the resolution of the exercises.
+
+## Final grade: 100% :heavy_check_mark:
+All exercises have passed correct through Moulinette.
+
+| Project | Validation |
+|:----:|:------------------:|
+| ex00 | :heavy_check_mark: |
+| ex01 | :heavy_check_mark: |
+| ex02 | :heavy_check_mark: |
+| ex03 | :heavy_check_mark: |
+| ex04 | :heavy_check_mark: |
+| ex05 | :heavy_check_mark: |
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C03/ex00/ft_strcmp.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/09 10:47:10 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/11 17:33:36 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// #include <stdio.h>
+// #include <string.h>
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	// while the two strings are equal and S1 does not reach the end
+	while (s1[i] == s2[i] && s1[i])
+	{
+		// While they are the same, the counter is added
+		i++;
+	}
+	// In the end, if they are equal or different, the value will be returned
+	return (s1[i] - s2[i]);
+}
+/* 
+int	main(void)
+{
+	char	*s1 = "word";
+	char	*s2 = "Word";
+
+	// This line calls the original function to verify that the output is the same
+	printf("Or: %d\n", strcmp(s1, s2));
+	printf("My: %d\n", ft_strcmp(s1, s2));
+} */
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C03/ex01/ft_strncmp.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/09 15:32:50 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/18 17:15:53 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// #include <stdio.h>
+// #include <string.h>
+
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
+{
+	unsigned int	i;
+
+	i = 0;
+	// while the counter is less than the passed number
+	while (i < n)
+	{
+		// If s1 is different from S2 or S1 reaches the end
+		// The difference between the two is returned
+		if (s1[i] != s2[i] || s1[i] == '\0')
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	// If the two are equal the return is zero
+	return (0);
+}
+/* 
+int	main()
+{
+	char s1[] = "word";
+	char s2[] = "Word";
+	int n = 2;
+
+	printf("Or: %d\n", strncmp(s1, s2, n));
+	printf("My: %d\n", ft_strncmp(s1, s2, n));
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C03/ex02/ft_strcat.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/10 09:45:06 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/10 11:33:14 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// #include <stdio.h>
+
+// This function will concatenate the two strings
+char	*ft_strcat(char *dest, char *src)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	// count dest until reach the end
+	while (dest[i] != '\0')
+		i++;
+	j = 0;
+	// until the end of src, dest receive src
+	while (src[j] != '\0')
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	// In the end dest receives the null
+	dest[i] = '\0';
+	return (dest);
+}
+/* 
+int	main(void)
+{
+	char	dest[10] = "dest";
+	char	src[10] = "src";
+
+	ft_strcat(dest, src);
+	printf("String: %s\n", dest);
+} */
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C03/ex03/ft_strncat.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/10 11:03:08 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/10 11:35:05 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// #include <stdio.h>
+
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
+{
+	unsigned int	i;
+	unsigned int	j;
+
+	i = 0;
+	j = 0;
+	while (dest[i] != '\0')
+		i++;
+	// while the SRC counter is smaller than the number
+	// and SRC doesn't reach the end
+	while (j < nb && src[j] != '\0')
+	{
+		// DEST receives the character of SRC
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+/* 
+int	main(void)
+{
+	char	dest[10] = "dest";
+	char	src[10] = "src";
+	int	n = 2;
+
+	ft_strncat(dest, src, n);
+	printf("%s", dest);
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C03/ex04/ft_strstr.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/10 12:55:02 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/11 11:51:02 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// #include <stdio.h>
+
+char	*ft_strstr(char *str, char *to_find)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	// If to_find is empty, the string is returned whole
+	if (to_find[0] == '\0')
+		return (str);
+	while (str[i] != '\0')
+	{
+		j = 0;
+		// Looking for the first correspondence between STR and TO_FIND
+		// while they are equal the 'j' counter is added
+		// 'i' remains with the value of the first correspondence
+		while (str[i + j] != '\0' && str[i + j] == to_find[j])
+		{
+			// If 'j' next position is equal to the null
+			// Is returned the string from position of 'i'
+			if (to_find[j + 1] == '\0')
+				return (&str[i]);
+			++j;
+		}	
+		++i;
+	}	
+	return (0);
+}
+/* 
+int	main(void)
+{
+	char *str = "Try to find this part of the text";
+	char *to_find = "to find";
+
+	printf("Returned: %s\n", ft_strstr(str, to_find));
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C03/ex05/ft_strlcat.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/11 13:04:33 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/13 13:57:47 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// #include <stdio.h>
+
+unsigned int	ft_strlen(char *str)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+// This function returns the lenght of the strings that will be concatenated
+// It also changes the destination string
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+{
+	unsigned int	i;
+	unsigned int	d;
+	unsigned int	s;
+	unsigned int	sum;
+
+	i = 0;
+	sum = 0;
+	d = ft_strlen(dest);
+	s = ft_strlen(src);
+	// If the past value is higher than dest
+	if (size > d)
+		// Lengths receives the SRC and dest lengths
+		sum = d + s;
+	else
+		// Otherwise it receives the SRC lenght plus the size
+		sum = s + size;
+	
+	// While SRC doesn't reach the end and size is larger than dest + 1
+	while (src[i] && size > (d + 1))
+	{
+		dest[d] = src[i];
+		d++;
+		i++;
+	}
+	// The last position of the size is stored for the null
+	dest[d] = '\0';
+	return (sum);
+}
+/* 
+int	main(void)
+{
+	char	dest[10] = "dest";
+	char	src[10] = "src";
+	int	size = 6;
+
+	printf("Dest Before: %s\n", dest);
+	printf("Return of strlcat: %d\n", ft_strlcat(dest, src, size));
+	printf("Dest after: %s\n", dest);
+} */
+
+```
+
+## C04
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C04/README.md
+
+```markdown
+# C 04
+
+In this project we will review some functions already done and learn about the conversion of bases and conversion of strings to integers. All exercises are commented for a better understanding.
+
+
+## Useful links:
+In this links bellow you can find videos that can help you to better understand some concepts covered in this project.
+<br>
+
+* **Atoi:** https://www.youtube.com/watch?v=QyDE7cPycnU&t=15s
+
+* **Bases conversion:** https://www.youtube.com/watch?v=FFDMzbrEXaE&t=463s
+<br>
+
+**NOTE:** These videos don't have the resolution of the exercises.
+
+## Final grade: 80% :heavy_check_mark:
+All exercises have passed correct through Moulinette until exercise 4. Exercise 5 was made after the Pisicne end.
+
+| Project | Validation |
+|:----:|:------------------:|
+| ex00 | :heavy_check_mark: |
+| ex01 | :heavy_check_mark: |
+| ex02 | :heavy_check_mark: |
+| ex03 | :heavy_check_mark: |
+| ex04 | :heavy_check_mark: |
+| ex05 | :x: |
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C04/ex00/ft_strlen.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/11 15:40:23 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/11 15:52:52 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// #include <stdio.h>
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+
+	// While the string doesn't reach the null
+	// the counter "i" will be increased
+	while (str[i] != '\0')
+		i++;
+
+	// In the end the function returns the number of characters counted
+	return (i);
+}
+/* 
+int	main(void)
+{
+	char	*str = "letters";
+
+	printf("The string %s has a lenght of %d\n", str, ft_strlen(str));
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C04/ex01/ft_putstr.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/11 15:55:34 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/11 17:04:36 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+
+	// While the string doesn't reach the null
+	while (str[i] != '\0')
+	{
+		// Each Char passed by the index "i" will be printed
+		write(1, &str[i], 1);
+		i++;
+	}
+}
+/* 
+int	main(void)
+{
+	char	*str = "Print the string";
+	
+	ft_putstr(str);
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C04/ex02/ft_putnbr.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/11 18:36:36 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/19 10:17:45 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+
+// Function to print an integer to stdout
+void	ft_putnbr(int nb)
+{
+	long int	n;
+
+	// long int 'n' receives int 'nb'
+	// to avoid the issues with the int min
+	n = nb;
+	
+	// If the 'n' is negative
+	// write a minus sign and make it positive
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n *= -1;
+	}
+
+	// If 'n' is a single digit between 0 and 9. write it.
+	// The plus '0' convert the int to char
+	if (n >= 0 && n <= 9)
+		ft_putchar(n + '0');
+
+	// If 'n' is more than one digit
+	if (n > 9)
+	{
+		// Recursively print the quotient by dividing the number by 10
+		ft_putnbr(n / 10);
+		
+		// Recursively print the remainder by computing the number modulo 10
+		ft_putnbr(n % 10);
+	}
+}
+/* 
+int	main(void)
+{
+	write(1, "Print a positive number: ", 26);
+	ft_putnbr(42);
+	write(1, "\nPrint a negative number: ", 26);
+	ft_putnbr(-42);
+	write(1, "\nPrint zero: ", 13);
+	ft_putnbr(0);
+	write(1, "\nPrint the max value of int: ", 29);
+	ft_putnbr(2147483647);
+	write(1, "\nPrint the min value of int: ", 29);
+	ft_putnbr(-2147483648);
+	write(1, "\n", 1);
+} */
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C04/ex03/ft_atoi.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/11 20:25:34 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/18 12:45:19 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// #include <stdio.h>
+
+int	ft_atoi(char *str)
+{
+	int	sum;
+	int	i;
+	int	sign;
+
+	i = 0;
+	sum = 0;
+
+	// The signal starts by default as positive
+	sign = 1;
+
+	// while there are spaces or tabs
+	// the 'i' is increased to go to the next character
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		++i;
+
+	// while there are '+' and '-', 'i' is increased
+	while (str[i] == '-' || str[i] == '+')
+	{
+		// If it's a minus sign
+		// the value of the 'sign' is inverted
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
+	}
+
+	// after the spaces and signs of + and -
+	// While the string has numbers, they will be added to sum
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		// This formula receives the number that is in the index and adds a decimal place
+		sum = (sum * 10) + (str[i] - '0');
+		i++;
+	}
+	// In the end, if the number of '-' is even, the number will be positive
+	// If the number of '-' is odd, the number will be negative
+	return (sign * sum);
+}
+/* 
+int	main(void)
+{
+	char *n = " ---+--+1234ab567";
+
+	printf("My: %d\n", ft_atoi(n));
+}*/
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C04/ex04/ft_putnbr_base.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <wcorrea-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/12 14:39:42 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/18 14:59:03 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+int	ft_check_base(char *base)
+{
+	int	i;
+	int	j;
+
+	// If the base is less than 2, returns 0
+	if (ft_strlen(base) < 2)
+		return (0);
+	i = 0;
+	while (base[i])
+	{
+		j = i + 1;
+		
+		// If it's found signs of + or -
+		// or non-printable characters, returns 0
+		if (base[i] == '+' || base[i] == '-'
+			|| base[i] < 32 || base[i] > 126)
+			return (0);
+
+		// check if the base has any repeated character
+		// If there is any, the return is 0
+		while (base[j])
+		{
+			if (base[i] == base[j])
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	// If there is no problem, the return is 1
+	return (1);
+}
+
+//This function will convert a decimal number to decimal or other bases and print it
+void	ft_putnbr_base(int nbr, char *base)
+{
+	char	box[32];
+	long	n;
+	int		size;
+	int		i;
+
+	// Call the function to check the past base
+	// If the return on the function is 0, the program finish
+	if (!ft_check_base(base))
+		return ;
+	
+	// counts the size of the base
+	size = ft_strlen(base);
+
+	// long n avoid the issues with the int min
+	n = nbr;
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n *= -1;
+	}
+	i = 0;
+
+	while (n > 0)
+	{
+		// Array Box receives the converted values of 'n' to the base
+		// This formula of 'n' module size will find the correct number at the base
+		box[i] = base[n % size];
+		n = n / size;
+		i++;
+	}
+
+	// The values stored in box were reversed
+	// This repetition will print what is in the box
+	// starting from last position to the first
+	while (--i >= 0)
+		ft_putchar(box[i]);
+}
+/* 
+int	main(void)
+{
+	int	n = 42;
+	char	*hex = "0123456789abcdef";
+	char	*oct = "012345678";
+	char	*dec = "0123456789";
+	char	*bin = "01";
+
+	write(1, "decimal to decimal: ", 20);
+	ft_putnbr_base(n, dec);
+	write(1, "\ndecimal to binary: ", 20);
+	ft_putnbr_base(n, bin);
+	write(1, "\ndecimal to octal: ", 20);
+	ft_putnbr_base(n, oct);
+	write(1, "\ndecimal to hexadecimal: ", 26);
+	ft_putnbr_base(n, hex);
+	write(1, "\n", 1);
+
+} */
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/C04/ex05/ft_atoi_base.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wcorrea- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/25 19:11:13 by wcorrea-          #+#    #+#             */
+/*   Updated: 2023/02/25 19:13:45 by wcorrea-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// #include <stdio.h>
+
+int	ft_check_base(char *str)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	// If the beginning of the base is null, returns 0
+	if (str[0] == '\0' || str[1] == '\0')
+		return (0);
+	while (str[i])
+	{
+		// If there are non-printable characters or signs of - and +, returns 0
+		if (str[i] <= 32 || str[i] == 127 || str[i] == '-' || str[i] == '+')
+			return (0);
+		j = i + 1;
+
+		// Check if there are repeated character
+		while (str[j])
+		{
+			if (str[i] == str[j])
+				return (0);
+			j++;
+		}
+		i++;
+	}
+
+	// Returns the size of the base
+	return (i);
+}
+
+int	ft_base_match(char c, char *base)
+{
+	int i;
+
+	i = 0;
+	while (base[i])
+	{
+		// If the past Char is the same as the base, returns the 'i'
+		if (c == base[i])
+			return (i);
+		i++;
+	}
+	// If the past char is the null of the string, the return will be -1
+	return (-1);
+}
+
+int	ft_pre_digits(char *str, int *ptr_sign)
+{
+	int	sign;
+	int	i;
+
+	sign = 1;
+	i = 0;
+	// Check the spaces and increased 'i'
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
+		i++;
+
+	// checks the signs of + and - and increases the 'i'
+	while (str[i] && (str[i] == '+' || str[i] == '-'))
+	{
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	// Change the value of sign in ft_atoi_base through the pointer ptr_sign
+	*ptr_sign = sign;
+
+	// In the end, returns the lenght from spaces and signs
+	return (i);
+}
+
+// converts any base to decimal
+int		ft_atoi_base(char *str, char *base)
+{
+	int		i;
+	int		sign;
+	int		sum;
+	int		current;
+	int		base_size;
+
+	sum = 0;
+	sign = 1;
+
+	// receives the base lenght or receives 0
+	base_size = ft_check_base(base);
+
+	// If the base length is less than 2
+	// or the base check returns zero, the return will be zero
+	// Otherwise the conversions are made
+	if (base_size >= 2)
+	{
+		// 'i' receives lenght from pre digits
+		i = ft_pre_digits(str, &sign);
+
+		// receives the first correspondence of the base
+		current = ft_base_match(str[i], base);
+
+		// as long as there is correspondence
+		while (current != -1)
+		{
+			// This formula converts the bases to decimal
+			sum = (sum * base_size) + current;
+			i++;
+
+			// Current receives ft_base_match from the next Index
+			current = ft_base_match(str[i], base);
+		}
+		return (sign * sum);
+	}
+	return (0);
+}
+/* 
+int		main(void)
+{
+	printf("%d\n", ft_atoi_base("	+++++--10", "0123456789"));
+	printf("%d\n", ft_atoi_base(" --101010", "01"));
+	printf("%d\n", ft_atoi_base(" 	+---539", "0123456789abcdef"));
+} */
+
+```
+
+## Exam00
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam00/0-only_a/only_a.c
+
+```c
+#include <unistd.h>
+
+// deliver the program with the main
+int		main(void)
+{
+	// Show 'a' on the standard output
+	write(1, "a", 1);
+}
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam00/0-only_a/subject.en.txt
+
+```text
+Assignment name  : only_a
+Expected files   : only_a.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that displays a 'a' character on the standard output.
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam00/1-ft_countdown/ft_countdown.c
+
+```c
+#include <unistd.h>
+
+// deliver the program with the main
+int		main(void)
+{
+	// Show '9876543210' with a new line on the standard output
+	write(1, "9876543210\n", 11);
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam00/1-ft_countdown/subject.en.txt
+
+```text
+Assignment name  : ft_countdown
+Expected files   : ft_countdown.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that displays all digits in descending order, followed by a
+newline.
+
+Example:
+$> ./ft_countdown | cat -e
+9876543210$
+$>
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam00/1-ft_print_numbers/ft_print_numbers.c
+
+```c
+#include <unistd.h>
+
+// deliver only the function
+void	ft_print_numbers(void)
+{
+	// Show '0123456789' on the standard output
+	write (1, "0123456789", 11);
+}
+/* 
+int	main(void)
+{
+	ft_print_numbers();
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam00/1-ft_print_numbers/subject.en.txt
+
+```text
+Assignment name  : ft_print_numbers
+Expected files   : ft_print_numbers.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a function that displays all digits in ascending order.
+
+Your function must be declared as follows:
+
+void	ft_print_numbers(void);
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam00/1-maff_alpha/maff_alpha.c
+
+```c
+#include <unistd.h>
+
+// deliver the program with the main
+int		main(void)
+{
+	// Print 'aBcDeFgHiJkLmNoPqRsTuVwXyZ' with a new line on the standard output
+	write(1, "aBcDeFgHiJkLmNoPqRsTuVwXyZ\n", 27);
+}
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam00/1-maff_alpha/subject.en.txt
+
+```text
+Assignment name  : maff_alpha
+Expected files   : maff_alpha.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that displays the alphabet, with even letters in uppercase, and
+odd letters in lowercase, followed by a newline.
+
+Example:
+
+$> ./maff_alpha | cat -e
+aBcDeFgHiJkLmNoPqRsTuVwXyZ$
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam00/1-maff_revalpha/maff_revalpha.c
+
+```c
+#include <unistd.h>
+
+// deliver the program with the main
+int		main(void)
+{
+	// Print 'zYxWvUtSrQpOnMlKjIhGfEdCbA' with a new line on the standard output
+	write(1, "zYxWvUtSrQpOnMlKjIhGfEdCbA\n", 27);
+	return (0);
+}
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam00/1-maff_revalpha/subject.en.txt
+
+```text
+Assignment name  : maff_revalpha
+Expected files   : maff_revalpha.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that displays the alphabet in reverse, with even letters in
+uppercase, and odd letters in lowercase, followed by a newline.
+
+Example:
+
+$> ./maff_revalpha | cat -e
+zYxWvUtSrQpOnMlKjIhGfEdCbA$
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam00/2-hello/hello.c
+
+```c
+#include <unistd.h>
+
+// deliver the program with the main
+int		main(void)
+{
+	// Print 'Hello World!' with a new line on the standard output
+	write(1, "Hello World!\n", 13);
+}
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam00/2-hello/subject.en.txt
+
+```text
+Assignment name  : hello
+Expected files   : hello.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that displays "Hello World!" followed by a \n.
+
+Example:
+
+$>./hello
+Hello World!
+$>./hello | cat -e
+Hello World!$
+$>
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam00/3-ft_swap/ft_swap.c
+
+```c
+// #include <stdio.h>
+
+// deliver only the function
+void	ft_swap(int *a, int *b)
+{
+	// variable that keeps one of the values temporarily
+	int	temp;
+
+	// This instruction exchanges the values to which pointers are pointing
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+/* 
+int	main(void)
+{
+	int	a = 15;
+	int	b = 35;
+	
+	printf("Before ft_swap:\n");
+	printf("a: %d\n", a);
+	printf("b: %d\n", b);
+
+	// swap the values with each other
+	ft_swap(&a, &b);
+
+	printf("\nAfter ft_swap: \n");
+	printf("a: %d\n", a);
+	printf("b: %d\n", b);
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam00/3-ft_swap/subject.en.txt
+
+```text
+Assignment name  : ft_swap
+Expected files   : ft_swap.c
+Allowed functions: 
+--------------------------------------------------------------------------------
+
+Write a function that swaps the contents of two integers the adresses of which
+are passed as parameters.
+
+Your function must be declared as follows:
+
+void	ft_swap(int *a, int *b);
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam00/4-ft_strcmp/ft_strcmp.c
+
+```c
+// #include <stdio.h>
+// #include <string.h>
+
+// deliver only this function
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	// while the two strings are equal and S1 does not reach the end
+	while (s1[i] == s2[i] && s1[i])
+	{
+		// While they are the same, the counter is added
+		i++;
+	}
+	// In the end, if they are equal or different, the value will be returned
+	return (s1[i] - s2[i]);
+}
+/* 
+int	main(void)
+{
+	// Make different tests to verify that the values are the same as the original
+	char	*s1 = "word";
+	char	*s2 = "Word";
+
+	// This line calls the original function to verify that the output is the same
+	printf("Or: %d\n", strcmp(s1, s2));
+	printf("My: %d\n", ft_strcmp(s1, s2));
+} */
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam00/4-ft_strcmp/subject.en.txt
+
+```text
+Assignment name  : ft_strcmp
+Expected files   : ft_strcmp.c
+Allowed functions: 
+--------------------------------------------------------------------------------
+
+Reproduce the behavior of the function strcmp (man strcmp).
+
+Your function must be declared as follows:
+
+int    ft_strcmp(char *s1, char *s2);
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam00/4-ft_strrev/ft_strrev.c
+
+```c
+// #include <stdio.h>
+
+// deliver only this function 
+char	*ft_strrev(char *str)
+{
+	int i = 0;
+	int last;
+	char temp;
+
+	// Count the string length
+	while (str[i])
+		i++;
+
+	// 'last' receives the String Lenght - 1
+	last = i - 1;
+	i = 0;
+	while (last > i)
+	{
+		// Change the first index with the last
+		temp = str[i];
+		str[i] = str[last];
+		str[last] = temp;
+
+		// Go to the next indices
+		i++;
+		last--;
+	}
+	return (str);
+}
+/* 
+int	main(void)
+{
+	char	str[17] = "words and letters";
+
+	printf("Regular String: %s\n", str);
+	printf("Reversed String: %s\n", ft_strrev(str));
+} */
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam00/4-ft_strrev/subject.en.txt
+
+```text
+Assignment name  : ft_strrev
+Expected files   : ft_strrev.c
+Allowed functions: 
+--------------------------------------------------------------------------------
+
+Write a function that reverses (in-place) a string.
+
+It must return its parameter.
+
+Your function must be declared as follows:
+
+char    *ft_strrev(char *str);
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam00/5-ft_atoi/ft_atoi.c
+
+```c
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// the atoi of the exam is equal of the original, it isn't equal to the atoi of C04/ex03
+// deliver only this function
+int	ft_atoi(char *str)
+{
+	int	sum;
+	int	i;
+	int	sign;
+
+	i = 0;
+	sum = 0;
+
+	// The signal starts by default as positive
+	sign = 1;
+
+	// while there are spaces or tabs go to the next character
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		++i;
+
+	// If it's a minus sign the value of the 'sign' is inverted and go to next char
+	if (str[i] == '-')
+	{
+		sign *= -1;
+		i++;
+	}
+
+	// While the string has numbers, they will be added to sum
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		// This formula receives the number that is in the index and adds a decimal place
+		sum = (sum * 10) + (str[i] - '0');
+		i++;
+	}
+	return (sign * sum);
+}
+/* 
+int	main(void)
+{
+	char *n = "     -1234ab567";
+
+	// The original atoi is in the Library <stdlib.h>
+	printf("Or: %d\n", atoi(n));
+	printf("My: %d\n", ft_atoi(n));
+} */
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam00/5-ft_atoi/subject.en.txt
+
+```text
+Assignment name  : ft_atoi
+Expected files   : ft_atoi.c
+Allowed functions: None
+--------------------------------------------------------------------------------
+
+Write a function that converts the string argument str to an integer (type int)
+and returns it.
+
+It works much like the standard atoi(const char *str) function, see the man.
+
+Your function must be declared as follows:
+
+int	ft_atoi(const char *str);
+
+
+```
+
+## Exam01
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/0-only_z/only_z.c
+
+```c
+#include <unistd.h>
+
+// deliver the program with the main
+int		main(void)
+{
+	// Show 'z' on the standard output
+	write(1, "z", 1);
+}
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/0-only_z/subject.en.txt
+
+```text
+Assignment name  : only_z
+Expected files   : only_z.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that displays a 'z' character on the standard output.
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/1-ft_strlen/ft_strlen.c
+
+```c
+// #include <stdio.h>
+
+// Deliver only this function
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	// While the string doesn't reach the null the counter "i" will be increased
+	while (str[i])
+		i++;
+
+	// In the end the function returns the number of characters counted
+	return (i);
+}
+/* 
+int	main(void)
+{
+	char	*str = "Hello World!";
+	int	lenght;
+	
+	lenght = ft_strlen(str);
+	printf("String: %s\nLenght: %d\n", str, lenght);
+} */
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/1-ft_strlen/subject.en.txt
+
+```text
+Assignment name  : ft_strlen
+Expected files   : ft_strlen.c
+Allowed functions: 
+--------------------------------------------------------------------------------
+
+Write a function that returns the length of a string.
+
+Your function must be declared as follows:
+
+int	ft_strlen(char *str);
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/1-ft_swap/ft_swap.c
+
+```c
+// #include <stdio.h>
+
+// deliver only the function
+void	ft_swap(int *a, int *b)
+{
+	// variable that keeps one of the values temporarily
+	int	temp;
+
+	// This instruction exchanges the values to which pointers are pointing
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+/* 
+int	main(void)
+{
+	int	a = 15;
+	int	b = 35;
+	
+	printf("Before ft_swap:\n");
+	printf("a: %d\n", a);
+	printf("b: %d\n", b);
+
+	// swap the values with each other
+	ft_swap(&a, &b);
+
+	printf("\nAfter ft_swap: \n");
+	printf("a: %d\n", a);
+	printf("b: %d\n", b);
+} */
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/1-ft_swap/subject.en.txt
+
+```text
+Assignment name  : ft_swap
+Expected files   : ft_swap.c
+Allowed functions: 
+--------------------------------------------------------------------------------
+
+Write a function that swaps the contents of two integers the adresses of which
+are passed as parameters.
+
+Your function must be declared as follows:
+
+void	ft_swap(int *a, int *b);
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/1-rev_print/rev_print.c
+
+```c
+#include <unistd.h>
+
+// deliver only this function 
+char	*ft_rev_print(char *str)
+{
+	int i = 0;
+	int last;
+	char temp;
+
+	// Count the string length
+	while (str[i])
+		i++;
+
+	// 'last' receives the String Lenght - 1
+	last = i - 1;
+	while (last >= 0)
+	{
+		// Prints the char in this index
+		write(1, &str[last], 1);
+
+		// Go to the next indices
+		last--;
+	}
+	// Print the new line only at the end of the string
+	write(1, "\n", 1);
+	return (str);
+}
+/* 
+int	main(int argc, char **argv)
+{
+	// only calls the function if you have only 2 arguments
+	if (argc == 2)
+
+		// Send to print the argument in position 1
+		ft_rev_print(argv[1]);
+} */
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/1-rev_print/subject.en.txt
+
+```text
+Assignment name  : rev_print
+Expected files   : rev_print.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a function that takes a string and displays the string in reverse
+order followed by the newline.
+Its prototype is constructed like this : 
+  char *ft_rev_print (char *str)
+It must return its argument
+
+Examples:
+
+$> ./rev_print "zaz" | cat -e
+zaz$
+$> ./rev_print "dub0 a POIL" | cat -e
+LIOP a 0bud$
+$> ./rev_print | cat -e
+$
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/2-first_word/first_word.c
+
+```c
+#include <unistd.h>
+
+// deliver the program with the main
+int		main(int ac, char **av)
+{
+	int i;
+
+	i = 0;
+
+	// Check if it have only 2 arguments
+	if (ac == 2)
+	{
+		// Go to the next character is space or tab
+		while (av[1][i] == ' ' || av[1][i] == '\t')
+			i++;
+
+		// while the argument 1 is not over and it is not space or tab
+		while (av[1][i] != '\0' && av[1][i] != ' ' && av[1][i] != '\t')
+		{
+			// Prints the char
+			write(1, &av[1][i], 1);
+			i++;
+		}
+	}
+	// Print the new line only at the end of the string
+	write(1, "\n", 1);
+	return (0);
+}
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/2-first_word/subject.en.txt
+
+```text
+Assignment name  : first_word
+Expected files   : first_word.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes a string and displays its first word, followed by a
+newline.
+
+A word is a section of string delimited by spaces/tabs or by the start/end of
+the string.
+
+If the number of parameters is not 1, or if there are no words, simply display
+a newline.
+
+Examples:
+
+$> ./first_word "FOR PONY" | cat -e
+FOR$
+$> ./first_word "this        ...       is sparta, then again, maybe    not" | cat -e
+this$
+$> ./first_word "   " | cat -e
+$
+$> ./first_word "a" "b" | cat -e
+$
+$> ./first_word "  lorem,ipsum  " | cat -e
+lorem,ipsum$
+$>
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/2-ft_strrev/ft_strrev.c
+
+```c
+// #include <stdio.h>
+
+// deliver only this function 
+char	*ft_strrev(char *str)
+{
+	int i = 0;
+	int last;
+	char temp;
+
+	// Count the string length
+	while (str[i])
+		i++;
+
+	// 'last' receives the String Lenght - 1
+	last = i - 1;
+	i = 0;
+	while (last > i)
+	{
+		// Change the first index with the last
+		temp = str[i];
+		str[i] = str[last];
+		str[last] = temp;
+
+		// Go to the next indices
+		i++;
+		last--;
+	}
+	return (str);
+}
+/* 
+int	main(void)
+{
+	char	str[17] = "words and letters";
+
+	printf("Regular String: %s\n", str);
+	printf("Reversed String: %s\n", ft_strrev(str));
+} */
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/2-ft_strrev/subject.en.txt
+
+```text
+Assignment name  : ft_strrev
+Expected files   : ft_strrev.c
+Allowed functions: 
+--------------------------------------------------------------------------------
+
+Write a function that reverses (in-place) a string.
+
+It must return its parameter.
+
+Your function must be declared as follows:
+
+char    *ft_strrev(char *str);
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/2-rot_13/rot_13.c
+
+```c
+#include <unistd.h>
+
+// deliver the program with the main
+int	main(int argc, char **argv)
+{
+	int	i = 0;
+
+	// only calls the function if you have only 2 arguments
+	if (argc == 2)
+	{
+		while(argv[1][i])
+		{
+			// If 'Char' is between 'a' and 'm', 'Str' receives 'Char' + 13
+			if((argv[1][i] >= 'A' && argv[1][i] <= 'M') || (argv[1][i] >= 'a' && argv[1][i] <= 'm'))
+				argv[1][i] += 13;
+
+			// If 'Char' is between 'n' and 'z', 'Str' receives 'Char' - 13
+			else if((argv[1][i] >= 'N' && argv[1][i] <= 'Z') || (argv[1][i] >= 'n' && argv[1][i] <= 'z'))
+				argv[1][i] -= 13;
+
+			// Prints the char
+			write(1, &argv[1][i], 1);
+			i++;
+		}
+	}
+	// Print the new line in the end
+	write(1, "\n", 1);
+}
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/2-rot_13/subject.en.txt
+
+```text
+Assignment name  : rot_13
+Expected files   : rot_13.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes a string and displays it, replacing each of its
+letters by the letter 13 spaces ahead in alphabetical order.
+
+'z' becomes 'm' and 'Z' becomes 'M'. Case remains unaffected.
+
+The output will be followed by a newline.
+
+If the number of arguments is not 1, the program displays a newline.
+
+Example:
+
+$>./rot_13 "abc"
+nop
+$>./rot_13 "My horse is Amazing." | cat -e
+Zl ubefr vf Nznmvat.$
+$>./rot_13 "AkjhZ zLKIJz , 23y " | cat -e
+NxwuM mYXVWm , 23l $
+$>./rot_13 | cat -e
+$
+$>
+$>./rot_13 "" | cat -e
+$
+$>
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/2-rotone/rotone.c
+
+```c
+#include <unistd.h>
+
+// deliver the program with the main
+int	main(int argc, char **argv)
+{
+	int	i = 0;
+
+	// only calls the function if you have only 2 arguments
+	if (argc == 2)
+	{
+		while(argv[1][i])
+		{
+			// If 'Char' is between 'a' and 'y', 'Str' receives 'Char' + 1
+			if((argv[1][i] >= 'A' && argv[1][i] <= 'Y') || (argv[1][i] >= 'a' && argv[1][i] <= 'y'))
+				argv[1][i] += 1;
+
+			// If 'Char' is 'z', 'Str' receives 'Char' - 25
+			else if((argv[1][i] == 'z' || argv[1][i] == 'Z'))
+				argv[1][i] -= 25;
+
+			// Prints the char
+			write(1, &argv[1][i], 1);
+			i++;
+		}
+	}
+	// Print the new line in the end
+	write(1, "\n", 1);
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/2-rotone/subject.en.txt
+
+```text
+Assignment name  : rotone
+Expected files   : rotone.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes a string and displays it, replacing each of its
+letters by the next one in alphabetical order.
+
+'z' becomes 'a' and 'Z' becomes 'A'. Case remains unaffected.
+
+The output will be followed by a \n.
+
+If the number of arguments is not 1, the program displays \n.
+
+Example:
+
+$>./rotone "abc"
+bcd
+$>./rotone "Les stagiaires du staff ne sentent pas toujours tres bon." | cat -e
+Mft tubhjbjsft ev tubgg of tfoufou qbt upvkpvst usft cpo.$
+$>./rotone "AkjhZ zLKIJz , 23y " | cat -e
+BlkiA aMLJKa , 23z $
+$>./rotone | cat -e
+$
+$>
+$>./rotone "" | cat -e
+$
+$>
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/3-inter/inter.c
+
+```c
+#include <unistd.h>
+
+// check if the character has appeared before
+int		appeared_before(char *str, char c, int pos)
+{
+	int i;
+
+	i = 0;
+	// checks even the position before the received Char
+	while (i < pos)
+	{
+		// If Str[i] is the same as Char, returns true
+		if (str[i] == c)
+			return (1);
+		i++;
+	}
+	// If it has not appeared before, the return is false
+	return (0);
+}
+void	inter(char *s1, char *s2)
+{
+	int	i = 0;
+	int	j;
+
+	// runs the two strings index by index
+	while (s1[i])
+	{
+		// 'J' always returns to the beginning 
+		j = 0;
+		while (s2[j])
+		{
+			// If what is in s1 is equal to s2
+			if (s1[i] == s2[j])
+			{
+				// If the character didn't appear before, it is printed
+				if (!appeared_before(s1, s1[i], i))
+				{
+					write(1, &s1[i], 1);
+					
+					// Get out of the current loop
+					break ;
+				}
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
+int		main(int ac, char **av)
+{
+	// only calls the function if you have only 3 arguments
+	if (ac == 3)
+		inter(av[1], av[2]);
+
+	// Print the new line in the end
+	write(1, "\n", 1);
+}
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/3-inter/subject.en.txt
+
+```text
+Assignment name  : inter
+Expected files   : inter.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes two strings and displays, without doubles, the
+characters that appear in both strings, in the order they appear in the first
+one.
+
+The display will be followed by a \n.
+
+If the number of arguments is not 2, the program displays \n.
+
+Examples:
+
+$>./inter "padinton" "paqefwtdjetyiytjneytjoeyjnejeyj" | cat -e
+padinto$
+$>./inter ddf6vewg64f gtwthgdwthdwfteewhrtag6h4ffdhsd | cat -e
+df6ewg4$
+$>./inter "rien" "cette phrase ne cache rien" | cat -e
+rien$
+$>./inter | cat -e
+$
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/3-last_word/last_word.c
+
+```c
+#include <unistd.h>
+
+// deliver the program with the main
+int main(int ac, char **av)
+{
+	int	i = 0;
+
+	// only calls the function if you have only 2 arguments
+	if (ac == 2)
+	{
+		// Count the string length
+		while (av[1][i])
+			i++;
+
+		// positions 'i' in the last index
+		i--;
+
+		// At the end of the string, while it has space or tab, decrees the 'i'
+		while (av[1][i] == ' ' || av[1][i] == '\t')
+			i--;
+		
+		// Runs the string until the last word begins
+		while (i > 0 && (av[1][i] != ' ' && av[1][i] != '\t'))
+			i--;
+
+		// positions 'i' in the index that starts the word
+		i++;
+
+		// Until the end or space comes, the word is printed
+		while (av[1][i] != ' ' && av[1][i] != '\t' && av[1][i])
+		{
+			write(1, &av[1][i], 1);
+			i++;
+		}
+	}
+	// Print the new line in the end
+	write(1, "\n", 1);
+}
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/3-last_word/subject.en.txt
+
+```text
+Assignment name  : last_word
+Expected files   : last_word.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes a string and displays its last word followed by a \n.
+
+A word is a section of string delimited by spaces/tabs or by the start/end of
+the string.
+
+If the number of parameters is not 1, or there are no words, display a newline.
+
+Example:
+
+$> ./last_word "FOR PONY" | cat -e
+PONY$
+$> ./last_word "this        ...       is sparta, then again, maybe    not" | cat -e
+not$
+$> ./last_word "   " | cat -e
+$
+$> ./last_word "a" "b" | cat -e
+$
+$> ./last_word "  lorem,ipsum  " | cat -e
+lorem,ipsum$
+$>
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/3-union/subject.en.txt
+
+```text
+Assignment name  : union
+Expected files   : union.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes two strings and displays, without doubles, the
+characters that appear in either one of the strings.
+
+The display will be in the order characters appear in the command line, and
+will be followed by a \n.
+
+If the number of arguments is not 2, the program displays \n.
+
+Example:
+
+$>./union zpadinton "paqefwtdjetyiytjneytjoeyjnejeyj" | cat -e
+zpadintoqefwjy$
+$>./union ddf6vewg64f gtwthgdwthdwfteewhrtag6h4ffdhsd | cat -e
+df6vewg4thras$
+$>./union "rien" "cette phrase ne cache rien" | cat -e
+rienct phas$
+$>./union | cat -e
+$
+$>
+$>./union "rien" | cat -e
+$
+$>
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/3-union/union.c
+
+```c
+#include <unistd.h>
+
+int		appeared_before_in_other_string(char *str, char c)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+	{
+		// If Str[i] is the same as Char, returns true
+		if (str[i] == c)
+			return (1);
+		i++;
+	}
+
+	// If it has not appeared before, the return is false
+	return (0);
+}
+
+int		appeared_before(char *str, char c, int pos)
+{
+	int i;
+
+	i = 0;
+
+	// checks even the position before the received Char
+	while (i < pos)
+	{
+		// If Str[i] is the same as Char, returns true
+		if (str[i] == c)
+			return (1);
+		i++; 
+	}
+
+	// If it has not appeared before, the return is false
+	return (0);
+}
+
+void	ft_union(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i])
+	{
+		// If the character didn't appear before in the current string, it is printed
+		if (!appeared_before(s1, s1[i], i))
+			write(1, &s1[i], 1);
+		i++;
+	}
+	i = 0;
+	while (s2[i])
+	{
+		// If the character didn't appear before in the other string
+		if (!appeared_before_in_other_string(s1, s2[i]))
+		{
+			// If the character didn't appear before in the current string, it is printed
+			if (!appeared_before(s2, s2[i], i))
+				write(1, &s2[i], 1);
+		}
+		i++;
+	}
+}
+
+int		main(int ac, char **av)
+{
+	// only calls the function if you have only 3 arguments
+	if (ac == 3)
+		ft_union(av[1], av[2]);
+
+	// Print the new line in the end
+	write(1, "\n", 1);
+}
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/3-wdmatch/subject.en.txt
+
+```text
+Assignment name  : wdmatch
+Expected files   : wdmatch.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes two strings and checks whether it's possible to
+write the first string with characters from the second string, while respecting
+the order in which these characters appear in the second string.
+
+If it's possible, the program displays the string, followed by a \n, otherwise
+it simply displays a \n.
+
+If the number of arguments is not 2, the program displays a \n.
+
+Examples:
+
+$>./wdmatch "faya" "fgvvfdxcacpolhyghbreda" | cat -e
+faya$
+$>./wdmatch "faya" "fgvvfdxcacpolhyghbred" | cat -e
+$
+$>./wdmatch "quarante deux" "qfqfsudf arzgsayns tsregfdgs sjytdekuoixq " | cat -e
+quarante deux$
+$>./wdmatch "error" rrerrrfiiljdfxjyuifrrvcoojh | cat -e
+$
+$>./wdmatch | cat -e
+$
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/3-wdmatch/wdmatch.c
+
+```c
+#include <unistd.h>
+
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+
+	// While the string doesn't reach the null
+	while (str[i])
+	{
+		// Each Char passed by the index "i" will be printed
+		write(1, &str[i], 1);
+		i++;
+	}	
+}
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	// While the string doesn't reach the null
+	// the counter "i" will be increased
+	while (str[i] != '\0')
+		i++;
+
+	// In the end the function returns the number of characters counted
+	return (i);
+}
+
+int		main(int ac, char **av)
+{
+	int i = 0;
+	int j = 0;
+	int match = 0;
+
+	// Check if there are exactly 3 arguments
+	if (ac == 3)
+	{
+		while (av[1][i])
+		{
+			while (av[2][j])
+			{
+				// if the char of argument 1 is equal to argument 2
+				if (av[1][i] == av[2][j])
+				{
+					// The counter is increased
+					match++;
+
+					// Get out of the current loop
+					break ;
+				}
+				j++;
+			}
+			i++;
+		}
+		// If the amount of match is equal to the length, print the string
+		if (match == ft_strlen(av[1]))
+			ft_putstr(av[1]);
+	}
+	// Print the new line in the end
+	write(1, "\n", 1);
+}
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/4-ft_range/ft_range.c
+
+```c
+#include <stdlib.h>
+// #include <stdio.h>
+
+int        ft_positive(int n)
+{
+    // If it is negative, change to positive
+    if (n < 0)
+        return (-n);
+    return (n);
+}
+
+int    *ft_range(int start, int end)
+{
+    int        size;
+    int        i;
+    int        *tab;
+    // 'size' receives the range between the start and the end
+    size = ft_positive(end - start) + 1;
+
+    // Memory allocation and check
+    tab = (int *)malloc(sizeof(int) * size);
+    if (tab == NULL)
+        return (0);
+    i = 0;
+
+    // If Start is less than or equal to the end
+    if (start <= end)
+    {
+        while (i < size)
+        {
+            // tab receives start + 1
+            tab[i] = start + i;
+            i++;
+        }
+    }
+    // If Start is greater than end
+    else if (start > end)
+    {
+        while (i < size)
+        {
+            // tab receives start - 1
+            tab[i] = start - i;
+            i++;
+        }
+    }
+    return (tab);
+}
+/* 
+int        main(void)
+{
+    int i = 0;
+    int start = 0;
+    int end = -3;
+    int size = ft_positive(end - start) + 1;
+    int *tab = ft_range(start, end);
+    
+    while (i < size)
+    {
+        printf("%d\n", tab[i]);
+        i++;
+    }
+} */
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/4-ft_range/subject.en.txt
+
+```text
+Assignment name  : ft_range
+Expected files   : ft_range.c
+Allowed functions: malloc
+--------------------------------------------------------------------------------
+
+Write the following function:
+
+int     *ft_range(int start, int end);
+
+It must allocate (with malloc()) an array of integers, fill it with consecutive
+values that begin at start and end at end (Including start and end !), then
+return a pointer to the first value of the array.
+
+Examples:
+
+- With (1, 3) you will return an array containing 1, 2 and 3.
+- With (-1, 2) you will return an array containing -1, 0, 1 and 2.
+- With (0, 0) you will return an array containing 0.
+- With (0, -3) you will return an array containing 0, -1, -2 and -3.
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/5-ft_itoa/ft_itoa.c
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+// Count the decimal places
+int	ft_decimal_places(long n)
+{
+	int i = 0;
+
+	// If it's negative, 'n' becomes positive and increases 'i'
+	if (n < 0)
+	{
+		n *= -1;
+		i++;
+	}
+
+	// while 'n' is bigger than 0, divides 'n' by 10
+	while (n > 0)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
+}
+
+// convert a int to char and store it in a array
+char	*ft_itoa(int nbr)
+{
+	int long	n;
+	char	*str;
+	int	i;
+	
+	// long int 'n' receives int 'nb'
+	// to avoid the issues with the int min
+	n = nbr;
+
+	// 'I' receives the decimal places
+	i = ft_decimal_places(n);
+	str = (char *) malloc(sizeof(char) * (i + 1));
+	if (str == NULL)
+		return (NULL);
+	
+	// The last position of the string receives the null
+	str[i--] = '\0';
+
+	// If 'n' is 0, the first position of the string gets '0' and returns
+	if (n == 0)
+	{
+		str[0] = '0';
+		return (str);
+	}
+
+	// If it's negative, the first position of the string receives '-' E 'n' becomes positive
+	if (n < 0)
+	{
+		str[0] = '-';
+		n *= -1;
+	}
+
+	// While 'n' is greater than 0, STR receives the 'n' module for 10
+	while (n > 0)
+	{
+		str[i] = n % 10 + '0';
+
+		// 'n' decreases a decimal place
+		n /= 10;
+		i--;
+	}
+	return (str);
+}
+/* 
+int	main(void)
+{
+	int	n = -987564;
+	int	i = 0;
+	char	*str = ft_itoa(n);
+
+	while (str[i])
+	{	
+		printf("str[%d] = [%c]\n", i, str[i]);
+		i++;
+	}
+} */
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/5-ft_itoa/subject.en.txt
+
+```text
+Assignment name  : ft_itoa
+Expected files   : ft_itoa.c
+Allowed functions: malloc
+--------------------------------------------------------------------------------
+
+Write a function that takes an int and converts it to a null-terminated string.
+The function returns the result in a char array that you must allocate.
+
+Your function must be declared as follows:
+
+char	*ft_itoa(int nbr);
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/5-ft_split/ft_split.c
+
+```c
+// #include <stdio.h>
+#include <stdlib.h>
+
+// check if a character is a separator
+int	is_separator(char c, char *sep)
+{
+	int	i;
+
+	i = 0;
+	// goes through all the characters of 'sep'
+	while (sep[i])
+	{
+		// If it's any of the separators, the return is 1
+		if (c == sep[i])
+			return (1);
+		i++;
+	}
+
+	// If not a separator the return is 0
+	return (0);
+}
+
+int	count_words(char *str, char *sep)
+{
+	int	i;
+	int	words;
+
+	i = 0;
+	words = 0;
+
+	// runs all the string
+	while (str[i])
+	{
+		// If it's not a separate, 'words' is increased
+		// if it's a separator, 'i' is increased (go to next char)
+		if (!is_separator(str[i], sep))
+		{
+			words++;
+			
+			// While the string is not over and is not a separator, 'i' is increased
+			while (str[i] && !is_separator(str[i], sep))
+				i++;
+		}
+		else
+			i++;
+	}
+
+	// returns the count of words
+	return (words);
+}
+
+char	*word_splitter(char *str, char *sep)
+{
+	char	*word;
+	int		i;
+
+	i = 0;
+
+	// Count the lenght of the word until it reachs the end and is not a separator
+	while (str[i] && !is_separator(str[i], sep))
+		i++;
+
+	// allocate the memory to 'Word' in the size counted
+	word = (char *) malloc(sizeof(char *) * (i + 1));
+	if (word == NULL)
+		return (NULL);
+
+	// 'i' needs to receive 0
+	i = 0;
+
+	// While the string is not over and is not a separator
+	// 'Word' receives what is in string
+	while (str[i] && !is_separator(str[i], sep))
+	{
+		word[i] = str[i];
+		i++;
+	}
+	word[i] = '\0';
+
+	// Returns the splitted string
+	return (word);
+}
+
+char	**ft_split(char *str, char *charset)
+{
+	int		i;
+	int		j;
+
+	// 'Words' is a set of strings
+	char	**words;
+
+	i = 0;
+	j = 0;
+
+	// 'Words' receives memory allocation in the size of the words + 1
+	words = (char **) malloc(sizeof(char *) * (count_words(str, charset) + 1));
+
+	// If any of the strings is null, the return is null
+	if (words == NULL || str == NULL || charset == NULL)
+		return (NULL);
+
+	// runs all the string
+	while (str[i])
+	{
+		// If it's not a separate, 'words' receives the word splitted
+		if (!is_separator(str[i], charset))
+		{
+			words[j] = word_splitter(&str[i], charset);
+
+			// While the string is not over and is not a separator, 'i' is increased
+			while (str[i] && !is_separator(str[i], charset))
+				i++;
+			
+			// Go to the next index of Words
+			j++;
+		}
+
+		// if it's a separator, 'i' is increased (go to next char)
+		else
+			i++;
+	}
+
+	// In the end Words need to receive 0
+	words[j] = 0;
+	return (words);
+}
+/* 
+int	main(void)
+{
+	char	*str = "Words to.be/splitted*in@six";
+	char	*sep = "./*@! ";
+	char	**words = ft_split(str, sep);
+	int i = 0;
+
+	printf("Before: %s\nAfter: \n", str);
+	while (words[i])
+	{
+		printf("%s\n", words[i]);
+		free(words[i]);
+		i++;
+	}
+	free(words);
+} */
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/Exam01/5-ft_split/subject.en.txt
+
+```text
+Assignment name  : ft_split
+Expected files   : ft_split.c
+Allowed functions: malloc
+--------------------------------------------------------------------------------
+
+Write a function that takes a string, splits it into words, and returns them as
+a NULL-terminated array of strings.
+
+A "word" is defined as a part of a string delimited either by spaces/tabs/new
+lines, or by the start/end of the string.
+
+Your function must be declared as follows:
+
+char    **ft_split(char *str);
+
+
+```
+
+## C-Piscine-exam Level 00
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-0-aff_a/aff_a.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   aff_a.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fwuensch <fwuensch@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/07/13 21:38:04 by fwuensch          #+#    #+#             */
+/*   Updated: 2017/07/13 21:41:27 by fwuensch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+int		main(int argc, char **argv)
+{
+	if (argc != 2)
+		write(1, "a", 1);
+	else
+	{
+		while (*argv[1])
+		{
+			if (*argv[1] == 'a')
+			{
+				write(1, "a", 1);
+				break;
+			}
+			argv[1]++;
+		}
+	}
+	write(1, "\n", 1);
+	return (0);
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-0-aff_a/subject.en.txt
+
+```text
+Assignment name  : aff_a
+Expected files   : aff_a.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes a string, and displays the first 'a' character it
+encounters in it, followed by a newline. If there are no 'a' characters in the
+string, the program just writes a newline. If the number of parameters is not
+1, the program displays 'a' followed by a newline.
+
+Example:
+
+$> ./aff_a "abc" | cat -e
+a$
+$> ./aff_a "dubO a POIL" | cat -e
+a$
+$> ./aff_a "zz sent le poney" | cat -e
+$
+$> ./aff_a | cat -e
+a$
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-0-ft_countdown/ft_countdown.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_countdown.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fwuensch <fwuensch@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/07/14 11:55:17 by fwuensch          #+#    #+#             */
+/*   Updated: 2017/07/14 11:55:18 by fwuensch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+int		main(void)
+{
+	char c;
+
+	c = '9';
+	while (c >= '0')
+	{
+		write(1, &c, 1);
+		c--;
+	}
+	write(1, "\n", 1);
+	return (0);
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-0-ft_countdown/subject.en.txt
+
+```text
+Assignment name  : ft_countdown
+Expected files   : ft_countdown.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that displays all digits in descending order, followed by a
+newline.
+
+Example:
+$> ./ft_countdown | cat -e
+9876543210$
+$>
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-0-ft_print_numbers/ft_print_numbers.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fwuensch <fwuensch@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/07/14 11:55:29 by fwuensch          #+#    #+#             */
+/*   Updated: 2017/07/14 11:55:56 by fwuensch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void    ft_print_numbers(void)
+{
+    char nb;
+
+    nb = '0';
+    while (nb <= '9')
+    {
+        write(1, &nb, 1);
+        nb++;
+    }
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-0-ft_print_numbers/subject.en.txt
+
+```text
+Assignment name  : ft_print_numbers
+Expected files   : ft_print_numbers.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a function that displays all digits in ascending order.
+
+Your function must be declared as follows:
+
+void	ft_print_numbers(void);
+
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-0-hello/examples.txt
+
+```text
+$>./hello
+Hello World!
+$>./hello | cat -e
+Hello World!$
+$>
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-0-hello/hello.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   hello.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angavrel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/07 16:25:55 by angavrel          #+#    #+#             */
+/*   Updated: 2016/12/07 16:27:51 by angavrel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+int		main(void)
+{
+	write(1, "Hello World!\n", 13);
+	return (0);
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-0-hello/subject.en.txt
+
+```text
+Assignment name  : hello
+Expected files   : hello.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that displays "Hello World!" followed by a \n.
+
+Example:
+
+$>./hello
+Hello World!
+$>./hello | cat -e
+Hello World!$
+$>
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-0-maff_alpha/examples.txt
+
+```text
+$> ./maff_alpha | cat -e
+aBcDeFgHiJkLmNoPqRsTuVwXyZ$
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-0-maff_alpha/maff_alpha.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   maff_alpha.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angavrel <angavrel@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/21 11:26:55 by angavrel          #+#    #+#             */
+/*   Updated: 2017/07/14 11:57:42 by fwuensch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+int		main(void)
+{
+	write(1, "aBcDeFgHiJkLmNoPqRsTuVwXyZ\n", 27);
+	return (0);
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-0-maff_alpha/subject.en.txt
+
+```text
+Assignment name  : maff_alpha
+Expected files   : maff_alpha.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that displays the alphabet, with even letters in uppercase, and
+odd letters in lowercase, followed by a newline.
+
+Example:
+
+$> ./maff_alpha | cat -e
+aBcDeFgHiJkLmNoPqRsTuVwXyZ$
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-1-aff_first_param/aff_first_param.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   aff_first_param.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angavrel <angavrel@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/03 15:00:02 by angavrel          #+#    #+#             */
+/*   Updated: 2017/07/14 12:25:39 by fwuensch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+int		main(int ac, char **av)
+{
+	if (ac > 1)
+		while (*av[1])
+			write(1, av[1]++, 1);
+	write(1, "\n", 1);
+	return (0);
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-1-aff_first_param/examples.txt
+
+```text
+$> ./aff_first_param vincent mit "l'ane" dans un pre et "s'en" vint | cat -e
+vincent$
+$> ./aff_first_param "j'aime le fromage de chevre" | cat -e
+j'aime le fromage de chevre$
+$> ./aff_first_param
+$
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-1-aff_first_param/subject.en.txt
+
+```text
+Assignment name  : aff_first_param
+Expected files   : aff_first_param.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes strings as arguments, and displays its first
+argument followed by a \n.
+
+If the number of arguments is less than 1, the program displays \n.
+
+Example:
+
+$> ./aff_first_param vincent mit "l'ane" dans un pre et "s'en" vint | cat -e
+vincent$
+$> ./aff_first_param "j'aime le fromage de chevre" | cat -e
+j'aime le fromage de chevre$
+$> ./aff_first_param
+$
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-1-aff_last_param/aff_last_param.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   aff_last_param.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angavrel <angavrel@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/07 17:46:21 by angavrel          #+#    #+#             */
+/*   Updated: 2017/07/14 12:29:50 by fwuensch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+int		main(int ac, char **av)
+{
+	if (ac > 1)
+		while (*av[ac - 1])
+			write(1, av[ac - 1]++, 1);
+	write(1, "\n", 1);
+	return (0);
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-1-aff_last_param/subject.en.txt
+
+```text
+Assignment name  : aff_last_param
+Expected files   : aff_last_param.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes strings as arguments, and displays its last
+argument followed by a newline.
+
+If the number of arguments is less than 1, the program displays a newline.
+
+Examples:
+
+$> ./aff_last_param "zaz" "mange" "des" "chats" | cat -e
+chats$
+$> ./aff_last_param "j'aime le savon" | cat -e
+j'aime le savon$
+$> ./aff_last_param
+$
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-1-maff_revalpha/maff_revalpha.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   maff_revalpha.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fwuensch <fwuensch@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/07/14 12:30:57 by fwuensch          #+#    #+#             */
+/*   Updated: 2017/07/14 12:30:58 by fwuensch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+int		main(void)
+{
+	int i;
+
+	i = 123;
+	while (i-- > 97)
+		(i % 2 == 0) ? ft_putchar(i) : ft_putchar(i - 32);
+	ft_putchar('\n');;
+	return (0);
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-1-maff_revalpha/subject.en.txt
+
+```text
+Assignment name  : maff_revalpha
+Expected files   : maff_revalpha.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that displays the alphabet in reverse, with even letters in
+uppercase, and odd letters in lowercase, followed by a newline.
+
+Example:
+
+$> ./maff_revalpha | cat -e
+zYxWvUtSrQpOnMlKjIhGfEdCbA$
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-1-only_a/only_a.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   only_a.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angavrel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/03 20:44:16 by angavrel          #+#    #+#             */
+/*   Updated: 2016/12/03 20:49:59 by angavrel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+int		main(void)
+{
+	write(1, "a", 1);
+	return (0);
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-1-only_a/subject.en.txt
+
+```text
+Assignment name  : only_a
+Expected files   : only_a.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that displays a 'a' character on the standard output.
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-1-only_z/only_z.c
+
+```c
+#include <unistd.h>
+
+int		main(void)
+{
+	write(1, "z", 1);
+	return (0);
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-1-only_z/subject.en.txt
+
+```text
+Assignment name  : only_z
+Expected files   : only_z.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that displays a 'z' character on the standard output.
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-2-aff_z/aff_z.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   aff_z.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angavrel <angavrel@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/17 14:15:08 by angavrel          #+#    #+#             */
+/*   Updated: 2017/07/14 12:32:26 by fwuensch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+int		main(void)
+{
+	write(1, "z", 1);
+	write(1, "\n", 1);
+	return (0);
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-2-aff_z/examples.txt
+
+```text
+$> ./aff_z "abc" | cat -e
+z$
+$> ./aff_z "dubO a POIL" | cat -e
+z$
+$> ./aff_z "zaz sent le poney" | cat -e
+z$
+$> ./aff_z | cat -e
+z$
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 00/0-2-aff_z/subject.en.txt
+
+```text
+Assignment name  : aff_z
+Expected files   : aff_z.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes a string, and displays the first 'z'
+character it encounters in it, followed by a newline. If there are no
+'z' characters in the string, the program writes 'z' followed
+by a newline. If the number of parameters is not 1, the program displays
+'z' followed by a newline.
+
+Example:
+
+$> ./aff_z "abc" | cat -e
+z$
+$> ./aff_z "dubO a POIL" | cat -e
+z$
+$> ./aff_z "zaz sent le poney" | cat -e
+z$
+$> ./aff_z | cat -e
+z$
+
+
+```
+
+## C-Piscine-exam Level 01
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-0-ft_strcpy/ft_strcpy.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angavrel <angavrel@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/02/26 12:48:30 by angavrel          #+#    #+#             */
+/*   Updated: 2017/07/14 14:50:20 by fwuensch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char    *ft_strcpy(char *s1, char *s2)
+{
+	int i;
+
+	i = 0;
+	while (s2[i])
+	{
+		s1[i] = s2[i];
+		i++;
+	}
+	s1[i] = s2[i];
+	return (s1);
+}
+
+// DO NOT SUBMIT ANYTHING BELOW
+
+#include <stdio.h>
+
+int main(void)
+{
+	char str1[] = "Flavio";
+	char str2[] = "Gaucho";
+
+	printf("%s\n", str1);
+	ft_strcpy(str1, str2);
+	printf("%s\n", str1);
+	return (0);
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-0-ft_strcpy/subject.en.txt
+
+```text
+Assignment name  : ft_strcpy
+Expected files   : ft_strcpy.c
+Allowed functions: 
+--------------------------------------------------------------------------------
+
+Reproduce the behavior of the function strcpy (man strcpy).
+
+Your function must be declared as follows:
+
+char    *ft_strcpy(char *s1, char *s2);
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-0-ft_strlen/ft_strlen.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fwuensch <fwuensch@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/07/14 14:51:14 by fwuensch          #+#    #+#             */
+/*   Updated: 2017/07/14 14:52:08 by fwuensch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int		ft_strlen(char *str)
+{
+	int i;
+
+	i = 0;
+	while(str[i])
+		i++;
+	return (i);
+}
+
+// DO NOT SUBMIT ANYTHING BELOW
+
+#include <stdio.h>
+
+int main (void)
+{
+	char str[] = "Flavio";
+
+	printf("%d\n", ft_strlen(str));
+	return (0);
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-0-ft_strlen/subject.en.txt
+
+```text
+Assignment name  : ft_strlen
+Expected files   : ft_strlen.c
+Allowed functions: 
+--------------------------------------------------------------------------------
+
+Write a function that returns the length of a string.
+
+Your function must be declared as follows:
+
+int	ft_strlen(char *str);
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-0-repeat_alpha/repeat_alpha.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   repeat_alpha.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fwuensch <fwuensch@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/07/14 14:55:21 by fwuensch          #+#    #+#             */
+/*   Updated: 2017/07/14 14:59:21 by fwuensch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+int		letter_count(char c)
+{
+	int	repeat;
+
+	if (c >= 'A' && c <= 'Z')
+		repeat = c - 'A' + 1;
+	else if (c >= 'a' && c <= 'z')
+		repeat = c - 'a' + 1;
+	else
+		repeat = 1;
+	return (repeat);
+}
+
+int		main(int ac, char **av)
+{
+	int	repeat;
+
+	if (ac == 2)
+	{
+		while (*av[1])
+		{
+			repeat = letter_count(*av[1]);
+			while (repeat--)
+				write(1, av[1], 1);
+			av[1]++;
+		}
+	}
+	ft_putchar('\n');
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-0-repeat_alpha/subject.en.txt
+
+```text
+Assignment name  : repeat_alpha
+Expected files   : repeat_alpha.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program called repeat_alpha that takes a string and display it
+repeating each alphabetical character as many times as its alphabetical index,
+followed by a newline.
+
+'a' becomes 'a', 'b' becomes 'bb', 'e' becomes 'eeeee', etc...
+
+Case remains unchanged.
+
+If the number of arguments is not 1, just display a newline.
+
+Examples:
+
+$>./repeat_alpha "abc"
+abbccc
+$>./repeat_alpha "Alex." | cat -e
+Alllllllllllleeeeexxxxxxxxxxxxxxxxxxxxxxxx.$
+$>./repeat_alpha 'abacadaba 42!' | cat -e
+abbacccaddddabba 42!$
+$>./repeat_alpha | cat -e
+$
+$>
+$>./repeat_alpha "" | cat -e
+$
+$>
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-0-search_and_replace/search_and_replace.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   search_and_replace.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fwuensch <fwuensch@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/07/14 15:09:23 by fwuensch          #+#    #+#             */
+/*   Updated: 2017/07/14 15:09:24 by fwuensch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+int main(int argc, char **argv) {
+	int i;
+
+	// we only need three parameters
+	if (argc != 4) {
+		write(1, "\n", 1);
+		return 0;
+	}
+
+	// the second and third arguments must be letters
+	if (argv[2][1] != '\0' || argv[3][1] != '\0') {
+		write(1, "\n", 1);
+		return 0;
+	}
+
+	// find and replace
+	i = 0;
+	while (argv[1][i] != '\0') {
+		if (argv[1][i] == argv[2][0])
+			argv[1][i] = argv[3][0];
+		write(1, &argv[1][i], 1);
+		i++;
+	}
+
+	write(1, "\n", 1);
+	return 0;
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-0-search_and_replace/subject.en.txt
+
+```text
+Assignment name  : search_and_replace
+Expected files   : search_and_replace.c
+Allowed functions: write, exit
+--------------------------------------------------------------------------------
+
+Write a program called search_and_replace that takes 3 arguments, the first 
+arguments is a string in which to replace a letter (2nd argument) by
+another one (3rd argument).
+
+If the number of arguments is not 3, just display a newline.
+
+If the second argument is not contained in the first one (the string)
+then the program simply rewrites the string followed by a newline.
+
+Examples:
+$>./search_and_replace "Papache est un sabre" "a" "o"
+Popoche est un sobre
+$>./search_and_replace "zaz" "art" "zul" | cat -e
+$
+$>./search_and_replace "zaz" "r" "u" | cat -e
+zaz$
+$>./search_and_replace "jacob" "a" "b" "c" "e" | cat -e
+$
+$>./search_and_replace "ZoZ eT Dovid oiME le METol." "o" "a" | cat -e
+ZaZ eT David aiME le METal.$
+$>./search_and_replace "wNcOre Un ExEmPle Pas Facilw a Ecrirw " "w" "e" | cat -e
+eNcOre Un ExEmPle Pas Facile a Ecrire $
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-0-ulstr/subject.en.txt
+
+```text
+Assignment name  : ulstr
+Expected files   : ulstr.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes a string and reverses the case of all its letters.
+Other characters remain unchanged.
+
+You must display the result followed by a '\n'.
+
+If the number of arguments is not 1, the program displays '\n'.
+
+Examples :
+
+$>./ulstr "L'eSPrit nE peUt plUs pRogResSer s'Il staGne et sI peRsIsTent VAnIte et auto-justification." | cat -e
+l'EspRIT Ne PEuT PLuS PrOGrESsER S'iL STAgNE ET Si PErSiStENT vaNiTE ET AUTO-JUSTIFICATION.$
+$>./ulstr "S'enTOuRer dE sECreT eSt uN sIGnE De mAnQuE De coNNaiSSanCe.  " | cat -e
+s'ENtoUrER De SecREt EsT Un SigNe dE MaNqUe dE COnnAIssANcE.  $
+$>./ulstr "3:21 Ba  tOut  moUn ki Ka di KE m'en Ka fe fot" | cat -e
+3:21 bA  ToUT  MOuN KI kA DI ke M'EN kA FE FOT$
+$>./ulstr | cat -e
+$
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-0-ulstr/ulstr.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ulstr.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angavrel <angavrel@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/03 15:11:26 by angavrel          #+#    #+#             */
+/*   Updated: 2017/07/14 15:28:42 by fwuensch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+int		main(int ac, char **av)
+{
+	if (ac == 2)
+	{
+		while (*av[1])
+		{
+			if (*av[1] >= 'A' && *av[1] <= 'Z')
+			{
+				*av[1] += 32;
+				write(1, av[1], 1);
+			}
+			else if (*av[1] >= 'a' && *av[1] <= 'z')
+			{
+				*av[1] -= 32;
+				write(1, av[1], 1);
+			}
+			av[1]++;
+		}
+	}
+	write(1, "\n", 1);
+	return (1);
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-1-rot_13/rot_13.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rot_13.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angavrel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/06 15:24:57 by angavrel          #+#    #+#             */
+/*   Updated: 2016/12/06 15:28:19 by angavrel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+
+int		rot_13(char c)
+{
+	if ((c >= 'A' && c <= 'M') || (c >= 'a' && c <= 'm'))
+		c += 13;
+	else if ((c >= 'N' && c <= 'Z') || (c >= 'n' && c <= 'z'))
+		c -= 13;
+	return (c);
+}
+
+
+
+int	main(int ac, char **av)
+{
+	if (ac == 2)
+		while (*av[1])
+			ft_putchar(rot_13(*av[1]++));
+	ft_putchar('\n');
+	return (0);
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-1-rot_13/subject.en.txt
+
+```text
+Assignment name  : rot_13
+Expected files   : rot_13.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes a string and displays it, replacing each of its
+letters by the letter 13 spaces ahead in alphabetical order.
+
+'z' becomes 'm' and 'Z' becomes 'M'. Case remains unaffected.
+
+The output will be followed by a newline.
+
+If the number of arguments is not 1, the program displays a newline.
+
+Example:
+
+$>./rot_13 "abc"
+nop
+$>./rot_13 "My horse is Amazing." | cat -e
+Zl ubefr vf Nznmvat.$
+$>./rot_13 "AkjhZ zLKIJz , 23y " | cat -e
+NxwuM mYXVWm , 23l $
+$>./rot_13 | cat -e
+$
+$>
+$>./rot_13 "" | cat -e
+$
+$>
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-2-first_word/first_word.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   first_word.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fwuensch <fwuensch@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/07/14 15:17:06 by fwuensch          #+#    #+#             */
+/*   Updated: 2017/07/14 15:19:31 by fwuensch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+int		main(int ac, char **av)
+{
+	if (ac == 2)
+	{
+		while (*av[1] && (*av[1] == ' ' || *av[1] == '\t'))
+			++av[1];
+		while (*av[1] != '\0' && (*av[1] != ' ' && *av[1] != '\t'))
+			write(1, av[1]++, 1);
+	}
+	ft_putchar('\n');
+	return (0);
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-2-first_word/subject.en.txt
+
+```text
+Assignment name  : first_word
+Expected files   : first_word.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes a string and displays its first word, followed by a
+newline.
+
+A word is a section of string delimited by spaces/tabs or by the start/end of
+the string.
+
+If the number of parameters is not 1, or if there are no words, simply display
+a newline.
+
+Examples:
+
+$> ./first_word "FOR PONY" | cat -e
+FOR$
+$> ./first_word "this        ...       is sparta, then again, maybe    not" | cat -e
+this$
+$> ./first_word "   " | cat -e
+$
+$> ./first_word "a" "b" | cat -e
+$
+$> ./first_word "  lorem,ipsum  " | cat -e
+lorem,ipsum$
+$>
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-2-fizzbuzz/fizzbuzz.c
+
+```c
+#include <unistd.h>
+
+void	ft_write_number(int number)
+{
+	if (number > 9)
+		ft_write_number(number / 10);
+	write(1, &"0123456789"[number % 10], 1);
+}
+
+int	main(void)
+{
+	int	number;
+
+	number = 1;
+	while (number <= 100)
+	{
+		if (number % 3 == 0 && number % 5 == 0)
+			write(1, "fizzbuzz", 8);
+		else if (number % 3 == 0)
+			write(1, "fizz", 4);
+		else if (number % 5 == 0)
+			write(1, "buzz", 4);
+		else
+			ft_write_number(number);
+		write(1, "\n", 1);
+		number++;
+	}
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-2-fizzbuzz/subject.en.txt
+
+```text
+Assignment name  : fizzbuzz
+Expected files   : fizzbuzz.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that prints the numbers from 1 to 100, each separated by a
+newline.
+
+If the number is a multiple of 3, it prints 'fizz' instead.
+
+If the number is a multiple of 5, it prints 'buzz' instead.
+
+If the number is both a multiple of 3 and a multiple of 5, it prints 'fizzbuzz' instead.
+
+Example:
+
+$>./fizzbuzz
+1
+2
+fizz
+4
+buzz
+fizz
+7
+8
+fizz
+buzz
+11
+fizz
+13
+14
+fizzbuzz
+[...]
+97
+98
+fizz
+buzz
+$> 
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-2-ft_putstr/ft_putstr.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angavrel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/03 20:56:36 by angavrel          #+#    #+#             */
+/*   Updated: 2016/12/03 20:57:04 by angavrel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_putstr(char *str)
+{
+	while (*str)
+		write(1, str++, 1);
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-2-ft_putstr/subject.en.txt
+
+```text
+Assignment name  : ft_putstr
+Expected files   : ft_putstr.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a function that displays a string on the standard output.
+
+The pointer passed to the function contains the address of the string's first
+character.
+
+Your function must be declared as follows:
+
+void	ft_putstr(char *str);
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-2-ft_swap/ft_swap.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angavrel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/07 16:31:30 by angavrel          #+#    #+#             */
+/*   Updated: 2016/12/08 17:22:35 by angavrel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_swap(int	*a, int *b)
+{
+	int temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-2-ft_swap/subject.en.txt
+
+```text
+Assignment name  : ft_swap
+Expected files   : ft_swap.c
+Allowed functions: 
+--------------------------------------------------------------------------------
+
+Write a function that swaps the contents of two integers the adresses of which
+are passed as parameters.
+
+Your function must be declared as follows:
+
+void	ft_swap(int *a, int *b);
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-3-first_word/first_word.c
+
+```c
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+int		main(int ac, char **av)
+{
+	int i;
+
+	i = 0;
+	if (ac == 2)
+	{
+		while (av[1][i] && (av[1][i] == ' ' || av[1][i] == '\t'))
+			i++;
+		while (av[1][i] && (av[1][i] != ' ' && av[1][i] != '\t'))
+		{
+			ft_putchar(av[1][i]);
+			i++;
+		}
+	}
+	ft_putchar('\n');
+	return (0);
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-3-first_word/subject.en.txt
+
+```text
+Assignment name  : first_word
+Expected files   : first_word.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes a string and displays its first word, followed by a
+newline.
+
+A word is a section of string delimited by spaces/tabs or by the start/end of
+the string.
+
+If the number of parameters is not 1, or if there are no words, simply display
+a newline.
+
+Examples:
+
+$> ./first_word "FOR PONY" | cat -e
+FOR$
+$> ./first_word "this        ...       is sparta, then again, maybe    not" | cat -e
+this$
+$> ./first_word "   " | cat -e
+$
+$> ./first_word "a" "b" | cat -e
+$
+$> ./first_word "  lorem,ipsum  " | cat -e
+lorem,ipsum$
+$>
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-3-rev_print/rev_print.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rev_print.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angavrel <angavrel@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/27 10:47:34 by angavrel          #+#    #+#             */
+/*   Updated: 2017/07/14 15:38:39 by fwuensch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+
+int		ft_strlen(char *s)
+{
+	int i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+
+int		main(int ac, char **av)
+{
+	int len;
+
+	if (ac == 2)
+	{
+		len = ft_strlen(av[1]);
+		while (len--)
+			write(1, &av[1][len], 1);
+	}
+	ft_putchar('\n');
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-3-rev_print/subject.en.txt
+
+```text
+Assignment name  : rev_print
+Expected files   : rev_print.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes a string, and displays the string in reverse
+followed by a newline.
+
+If the number of parameters is not 1, the program displays a newline.
+
+Examples:
+
+$> ./rev_print "zaz" | cat -e
+zaz$
+$> ./rev_print "dub0 a POIL" | cat -e
+LIOP a 0bud$
+$> ./rev_print | cat -e
+$
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-4-rotone/rotone.c
+
+```c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotone.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angavrel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/01/28 17:42:14 by angavrel          #+#    #+#             */
+/*   Updated: 2017/01/28 17:52:56 by angavrel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	rotone(char *s)
+{
+	while (*s)
+	{
+		if ((*s >= 'A' && *s <= 'Y') || (*s >= 'a' && *s <= 'y'))
+			ft_putchar(*s + 1);
+		else if (*s == 'Z' || *s == 'z')
+			ft_putchar(*s - 25);
+		else
+			ft_putchar(*s);
+		++s;
+	}
+}
+
+int		main(int ac, char **av)
+{
+	if (ac == 2)
+		rotone(av[1]);
+	ft_putchar('\n');
+	return (0);
+}
+
+
+```
+
+
+### /Users/khant.h/Documents/Past-42-C-Piscine/Past-42/Exams Practice/C-Piscine-exam/Level 01/1-4-rotone/subject.en.txt
+
+```text
+Assignment name  : rotone
+Expected files   : rotone.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes a string and displays it, replacing each of its
+letters by the next one in alphabetical order.
+
+'z' becomes 'a' and 'Z' becomes 'A'. Case remains unaffected.
+
+The output will be followed by a \n.
+
+If the number of arguments is not 1, the program displays \n.
+
+Example:
+
+$>./rotone "abc"
+bcd
+$>./rotone "Les stagiaires du staff ne sentent pas toujours tres bon." | cat -e
+Mft tubhjbjsft ev tubgg of tfoufou qbt upvkpvst usft cpo.$
+$>./rotone "AkjhZ zLKIJz , 23y " | cat -e
+BlkiA aMLJKa , 23z $
+$>./rotone | cat -e
+$
+$>
+$>./rotone "" | cat -e
+$
+$>
+
+
+```

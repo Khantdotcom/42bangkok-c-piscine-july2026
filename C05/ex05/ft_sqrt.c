@@ -1,21 +1,26 @@
-int ft_sqrt(int nb)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: khant.h <khant.h@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/23 16:46:00 by khant.h           #+#    #+#             */
+/*   Updated: 2026/07/23 21:47:09 by khant.h          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_sqrt(int nb)
 {
-    int i;
+	int	i;
 
-    // A negative number or 0 does not have a positive integer square root
-    if (nb <= 0)
-    {
-        return (0);
-    }
-
-    i = 1;
-
-	while (i <= nb/i)
+	if (nb <= 0)
+		return (0);
+	i = 1;
+	while (i <= nb / i)
 	{
-		if(i * i == nb)
-		{
+		if (i * i == nb)
 			return (i);
-		}
 		i++;
 	}
 	return (0);

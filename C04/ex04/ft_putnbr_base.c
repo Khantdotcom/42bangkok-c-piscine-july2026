@@ -6,7 +6,7 @@
 /*   By: khahtay <khahtay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 14:39:42 by wcorrea-          #+#    #+#             */
-/*   Updated: 2026/07/28 16:31:47 by khahtay          ###   ########.fr       */
+/*   Updated: 2026/07/28 17:14:04 by khahtay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,22 @@ int	ft_check_base(char *base)
 	return (1);
 }
 
+long int	ft_normalize(int n)
+{
+	long	j;
+
+	j = n;
+	if (j < 0)
+	{
+		ft_putchar('-');
+		j *= -1;
+	}
+	return (j);
+}
+
 void	ft_putnbr_base(int nbr, char *base)
 {
-	char	box[32];
+	char	box[1024];
 	long	n;
 	int		size;
 	int		i;
@@ -62,13 +75,13 @@ void	ft_putnbr_base(int nbr, char *base)
 	if (!ft_check_base(base))
 		return ;
 	size = ft_strlen(base);
-	n = nbr;
-	if (n < 0)
-	{
-		ft_putchar('-');
-		n *= -1;
-	}
+	n = ft_normalize(nbr);
 	i = 0;
+	if (n == 0)
+	{
+		ft_putchar(base[0]);
+		return ;
+	}
 	while (n > 0)
 	{
 		box[i] = base[n % size];

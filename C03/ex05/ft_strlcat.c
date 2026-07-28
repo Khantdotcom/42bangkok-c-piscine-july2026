@@ -3,54 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khant.h <khant.h@student.42.fr>            +#+  +:+       +#+        */
+/*   By: khahtay <khahtay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/22 10:42:36 by khant.h           #+#    #+#             */
-/*   Updated: 2026/07/22 10:42:39 by khant.h          ###   ########.fr       */
+/*   Created: 2023/02/11 13:04:33 by wcorrea-          #+#    #+#             */
+/*   Updated: 2026/07/28 15:45:46 by khahtay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-char	*ft_strcat(char *dest, char *src)
+unsigned int	ft_strlen(char *str)
 {
-	int	i;
-	int	j;
+	unsigned int	i;
 
 	i = 0;
-	while(dest[i])
+	while (str[i] != '\0')
 	{
 		i++;
 	}
+	return (i);
+}
+
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+{
+	unsigned int	dest_len;
+	unsigned int	src_len;
+	unsigned int	i;
+	unsigned int	j;
+
+	dest_len = ft_strlen(dest);
+	src_len = ft_strlen(src);
+	if (size <= dest_len)
+	{
+		return (size + src_len);
+	}
+	i = dest_len;
 	j = 0;
-	while(src[j])
+	while (src[j] != '\0' && i < (size - 1))
 	{
 		dest[i] = src[j];
 		i++;
 		j++;
 	}
 	dest[i] = '\0';
-	return (dest);
+	return (dest_len + src_len);
 }
-
-void	print_char(char	*s)
-{
-	int	i;
-	
-	i = 0;
-	while(s[i])
-	{
-		write(1,&s[i],1);
-		i++;
-	}
-}
-
-// int	main(void)
-// {
-// 	char dest[50] = "Lee";
-// 	char *src = " Pl";
-
-// 	char *result = ft_strcat(dest,src);
-// 	print_char(result);
-// 	return (0);
-// }

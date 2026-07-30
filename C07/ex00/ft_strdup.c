@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khahtay <khahtay@student.42.fr>            +#+  +:+       +#+        */
+/*   By: khant.h <khant.h@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 12:50:02 by khahtay           #+#    #+#             */
-/*   Updated: 2026/07/29 13:13:34 by khahtay          ###   ########.fr       */
+/*   Updated: 2026/07/30 08:51:59 by khant.h          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,30 +47,25 @@ char	*ft_strdup(char *src)
 	return (*(&d));
 }
 
-void	ft_putchar(char *src)
-{
-	int	i;
-
-	i = 0;
-	while (src[i])
-	{
-		write(1, &src[i], 1);
-		i++;
-	}
-	write(1, "\n", 1);
-}
-
+// void	ft_putchar(char *src)
+// {
+// 	int	i;
+// 	i = 0;
+// 	while (src[i])
+// 	{
+// 		write(1, &src[i], 1);
+// 		i++;
+// 	}
+// 	write(1, "\n", 1);
+// }
 // int	main(void)
 // {
 // 	char	*s;
 // 	char	*d;
-
 // 	s = "I am creative";
 // 	d = ft_strdup(s);
 // 	ft_putchar(s);
 // 	ft_putchar(d);
-
 // 	free(d);
-
 // 	return (0);
 // }

@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: teasavat <teeraasasav@gamil.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/15 09:41:40 by teasavat          #+#    #+#             */
-/*   Updated: 2024/07/16 11:37:19 by teasavat         ###   ########.fr       */
+/*   Created: 2024/08/09 10:04:43 by teasavat          #+#    #+#             */
+/*   Updated: 2024/08/09 10:04:43 by teasavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#ifndef FT_H
+#define FT_H
 
-void	ft_swap(int *a, int *b)
-{
-	int	n;
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
 
-	n = *a;
-	*a = *b;
-	*b = n;
-}
-
-/*int	main(void)
-{
-	int a = 0;
-	int b = 42;
-
-	ft_swap(&a, &b);
-
-	printf("a = %i\n", a);
-	printf("b = %i\n", b);
-	return(0);
-}*/
+#endif

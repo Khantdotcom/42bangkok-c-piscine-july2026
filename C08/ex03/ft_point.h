@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: teasavat <teeraasasav@gamil.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/15 09:41:40 by teasavat          #+#    #+#             */
-/*   Updated: 2024/07/16 11:37:19 by teasavat         ###   ########.fr       */
+/*   Created: 2024/07/31 16:31:30 by teasavat          #+#    #+#             */
+/*   Updated: 2024/07/31 16:56:36 by teasavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#ifndef FT_POINT_H
+# define FT_POINT_H
 
-void	ft_swap(int *a, int *b)
+typedef struct t_point
 {
-	int	n;
-
-	n = *a;
-	*a = *b;
-	*b = n;
-}
-
-/*int	main(void)
-{
-	int a = 0;
-	int b = 42;
-
-	ft_swap(&a, &b);
-
-	printf("a = %i\n", a);
-	printf("b = %i\n", b);
-	return(0);
-}*/
+	int	x;
+	int	y;
+}	t_point;
+#endif

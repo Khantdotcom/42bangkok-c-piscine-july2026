@@ -6,11 +6,10 @@
 /*   By: khant.h <khant.h@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 12:50:02 by khahtay           #+#    #+#             */
-/*   Updated: 2026/07/30 08:51:59 by khant.h          ###   ########.fr       */
+/*   Updated: 2026/07/30 10:20:56 by khant.h          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdlib.h>
 
 int	ft_len(char *src)

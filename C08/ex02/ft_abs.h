@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: teasavat <teeraasasav@gamil.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/15 09:41:40 by teasavat          #+#    #+#             */
-/*   Updated: 2024/07/16 11:37:19 by teasavat         ###   ########.fr       */
+/*   Created: 2024/07/31 15:39:13 by teasavat          #+#    #+#             */
+/*   Updated: 2024/07/31 16:29:00 by teasavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#ifndef FT_ABS_H
+# define FT_ABS_H
+# define ABS abs
 
-void	ft_swap(int *a, int *b)
+int	abs(int nb)
 {
-	int	n;
-
-	n = *a;
-	*a = *b;
-	*b = n;
+	if (nb < 0)
+		return (-nb);
+	return (nb);
 }
-
-/*int	main(void)
-{
-	int a = 0;
-	int b = 42;
-
-	ft_swap(&a, &b);
-
-	printf("a = %i\n", a);
-	printf("b = %i\n", b);
-	return(0);
-}*/
+#endif
